@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DashBord_DAL;
 using System.Data;
 using Newtonsoft.Json;
 namespace DashBord_BL
