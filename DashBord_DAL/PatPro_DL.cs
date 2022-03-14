@@ -498,6 +498,9 @@ namespace DashBord_DAL
             dbcon.ExecNonQuery(SelectString);
             SelectString = "select max(TemplatesOrders.sys_key) as sys_key  from TemplatesOrders  WITH (nolock)  order by sys_key desc";
             res = dbcon.ExecScalarQuery(SelectString).ToString();
+            SelectString = "update TemplatesOrders set orderkey = " + res + " where sys_key = " + res;
+            this.dbcon.ExecNonQuery(SelectString);
+
             return res;
         }
 
