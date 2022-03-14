@@ -1,0 +1,42 @@
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.pdb
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.AssemblyReference.cache
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.CoreCompileInputs.cache
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.pdb
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.dll
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.pdb
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.AssemblyReference.cache
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.CoreCompileInputs.cache
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.dll
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.pdb
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Microsoft.Web.Administration.dll
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.CopyComplete
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.dll.config
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Newtonsoft.Json.dll
+E:\HI-GitHub\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Newtonsoft.Json.xml
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.dll.config
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Newtonsoft.Json.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Microsoft.Web.Administration.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Newtonsoft.Json.xml
+E:\projects\Health-Inside\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.CopyComplete
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.dll.config
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.pdb
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Microsoft.Web.Administration.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.AssemblyReference.cache
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.CoreCompileInputs.cache
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.pdb
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.dll.config
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\DashBord_DAL.pdb
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Microsoft.Web.Administration.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.AssemblyReference.cache
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.csproj.CoreCompileInputs.cache
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\obj\Debug\DashBord_DAL.pdb

@@ -1,0 +1,236 @@
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.dll.config
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.pdb
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\csc.exe
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\csc.exe.config
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\csc.rsp
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\csi.exe
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\csi.exe.config
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\csi.rsp
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.Managed.Core.targets
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.AppContext.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Collections.Immutable.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Console.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Globalization.Calendars.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.IO.Compression.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.IO.FileSystem.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Net.Http.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Net.Sockets.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Reflection.Metadata.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.ValueTuple.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Xml.XmlDocument.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Xml.XPath.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\vbc.exe
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\vbc.exe.config
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\vbc.rsp
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\VBCSCompiler.exe
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\roslyn\VBCSCompiler.exe.config
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\projects\Health-Inside\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.AssemblyReference.cache
+E:\projects\Health-Inside\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.CoreCompileInputs.cache
+E:\projects\Health-Inside\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.CopyComplete
+E:\projects\Health-Inside\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.dll
+E:\projects\Health-Inside\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.pdb
+E:\HI-GitHub\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.dll.config
+E:\HI-GitHub\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.pdb
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\csc.exe
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\csc.exe.config
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\csc.rsp
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\csi.exe
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\csi.exe.config
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\csi.rsp
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.Managed.Core.targets
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.AppContext.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Collections.Immutable.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Console.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Globalization.Calendars.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.IO.Compression.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.IO.FileSystem.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Net.Http.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Net.Sockets.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Reflection.Metadata.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.ValueTuple.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Xml.XmlDocument.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Xml.XPath.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\vbc.exe
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\vbc.exe.config
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\vbc.rsp
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\VBCSCompiler.exe
+E:\HI-GitHub\UpgradeDashBordAPI\bin\roslyn\VBCSCompiler.exe.config
+E:\HI-GitHub\UpgradeDashBordAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\HI-GitHub\UpgradeDashBordAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\HI-GitHub\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.AssemblyReference.cache
+E:\HI-GitHub\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.CoreCompileInputs.cache
+E:\HI-GitHub\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.CopyComplete
+E:\HI-GitHub\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.dll
+E:\HI-GitHub\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.pdb
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.dll.config
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.pdb
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\csc.exe
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\csc.exe.config
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\csc.rsp
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\csi.exe
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\csi.exe.config
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\csi.rsp
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.AppContext.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Console.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.IO.Compression.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Net.Http.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Net.Sockets.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.ValueTuple.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Xml.XPath.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\vbc.exe
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\vbc.exe.config
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\vbc.rsp
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.AssemblyReference.cache
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.CoreCompileInputs.cache
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.CopyComplete
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.dll
+C:\Users\mahmo\Desktop\New folder\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.pdb
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.dll.config
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\UpgradeDashBordAPI.pdb
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\csc.exe
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\csc.exe.config
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\csc.rsp
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\csi.exe
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\csi.exe.config
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\csi.rsp
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.AppContext.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Console.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.IO.Compression.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Net.Http.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Net.Sockets.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.ValueTuple.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Xml.XPath.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\vbc.exe
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\vbc.exe.config
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\vbc.rsp
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\VBCSCompiler.exe
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.AssemblyReference.cache
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.CoreCompileInputs.cache
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.csproj.CopyComplete
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.dll
+C:\Users\mahmo\Desktop\UpgradeDashBordAPI\obj\Debug\UpgradeDashBordAPI.pdb
