@@ -758,5 +758,103 @@ namespace DashBord_BL
             return res;
         }
 
+
+
+        // new project 
+        public string GetIsOrderEpisode(string Eps_Key)
+        {
+            string isOrderEpisode = "";
+            string str = "";
+            DashBord_DAL.PatPro_DL pp = new PatPro_DL();
+            DataTable dt = pp.GetIsOrderEpisode(Eps_Key);
+            if (dt.Rows.Count > 0)
+                str = dt.Rows[0]["ExServices"].ToString();
+            if (str == "9")
+                isOrderEpisode = "Account Closed";
+            return isOrderEpisode;
+        }
+
+
+        public string GetEnableOrderSets(string HID)
+        {
+            if (HID.Trim() == "")
+            {
+                return "";
+            }
+            DashBord_DAL.PatPro_DL obj = new PatPro_DL();
+            return obj.GetEnableOrderSets(HID);
+        }
+
+        public string GetUserDefScreen(string User_Id)
+        {
+            DashBord_DAL.PatPro_DL dal = new PatPro_DL();
+            DataTable dt = dal.GetUserDefScreen(User_Id);
+            string userDefScreen = "";
+            if (dt.Rows.Count > 0)
+                return userDefScreen = dt.Rows[0][0].ToString();
+            return "";
+        }
+
+        //  this fun return Eps_Status 
+        public string Eps_Status(string Eps_Key) => new DashBord_DAL.PatPro_DL().Eps_Status(Eps_Key);
+
+        //  this fun return GetGender 
+        public string GetGender(string PID) => new DashBord_DAL.PatPro_DL().GetGender(PID);
+
+
+
+
+        public string GetAssessmentsData(
+        string Patient_ID,
+        DateTime FromDate,
+        DateTime ToDate)
+        {
+            DashBord_DAL.PatPro_DL assessmentsDl = new PatPro_DL();
+            List<Assessments> assessmentsData = new List<Assessments>();
+            foreach (DataRow row in (InternalDataCollectionBase)assessmentsDl.GetAssessmentsData(Patient_ID, FromDate, ToDate).Rows)
+            {
+                Assessments assessments = new Assessments();
+                assessments.EpisodeKey = row["EpisodeKey"].ToString();
+                assessments.Description = row["Description"].ToString();
+                assessments.PATIENT_ID = row["PATIENT_ID"].ToString();
+                assessments.ReportKey = row["ReportKey"].ToString();
+                assessments.DateTimeStamp = string.Format("{0:dd-MMM-yyyy HH:mm}", (object)Convert.ToDateTime(row["DateTimeStamp"].ToString()));
+                assessments.SheetDefKey = row["SheetDefKey"].ToString();
+                assessments.SheetKey = row["SheetKey"].ToString();
+                assessments.Staff_name = row["Staff_name"].ToString();
+                assessments.Status = row["Status"].ToString();
+                assessments.TemplateKey = row["TemplateKey"].ToString();
+                assessments.User_Key = row["Staff_Key"].ToString();
+                assessments.AttachNote = !(row["Attach"].ToString() != "0") ? "" : "Images/Gen/page_attach.png";
+                if (assessments.Status == "0")
+                {
+                    assessments.Ico_Status = "Images/SheetImages/new_sht.ico";
+                    assessments.Desc_Status = "Not Signed";
+                }
+                else
+                {
+                    assessments.Ico_Status = "Images/SheetImages/sign_sht.ico";
+                    assessments.Desc_Status = "Signed";
+                }
+                assessmentsData.Add(assessments);
+            }
+            return JsonConvert.SerializeObject(assessmentsData);
+        }
+
+
+        public static string GetLastVisit(string PID, string Eps_key)
+        {
+            string lastVisit = "";
+            DataTable dt = DashBord_DAL.PatPro_DL.GetLastVisit(PID, Eps_key);
+            foreach (DataRow row in (InternalDataCollectionBase)dt.Rows)
+            {
+                lastVisit = string.Format("{0:yyyy-MM-dd}", (object)Convert.ToDateTime(dt.Rows[0]["start_date"].ToString()));
+                lastVisit = Convert.ToDateTime(lastVisit).ToString("o");
+            }
+            return lastVisit;
+        }
+
+
+
     }
 }

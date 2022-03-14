@@ -30,3 +30,19 @@ C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_BL\obj\Release\DashBord_BL.cs
 C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_BL\obj\Release\DashBord_BL.csproj.CopyComplete
 C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_BL\obj\Release\DashBord_BL.dll
 C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_BL\obj\Release\DashBord_BL.pdb
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\DashBord_BL.dll.config
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\DashBord_BL.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\DashBord_BL.pdb
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\DashBord_DAL.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\Newtonsoft.Json.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\MedicaDAL.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\Encryption.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\Microsoft.Web.Administration.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\DashBord_DAL.pdb
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\DashBord_DAL.dll.config
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\bin\Release\Newtonsoft.Json.xml
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\obj\Release\DashBord_BL.csproj.AssemblyReference.cache
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\obj\Release\DashBord_BL.csproj.CoreCompileInputs.cache
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\obj\Release\DashBord_BL.csproj.CopyComplete
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\obj\Release\DashBord_BL.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_BL\obj\Release\DashBord_BL.pdb

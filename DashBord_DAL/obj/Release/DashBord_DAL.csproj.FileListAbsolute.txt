@@ -23,3 +23,16 @@ C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\obj\Release\DashBord_DAL.
 C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\obj\Release\DashBord_DAL.csproj.CoreCompileInputs.cache
 C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\obj\Release\DashBord_DAL.dll
 C:\Users\mahmo\Desktop\UpgradeDashBordAPI\DashBord_DAL\obj\Release\DashBord_DAL.pdb
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\bin\Release\DashBord_DAL.dll.config
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\bin\Release\DashBord_DAL.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\bin\Release\DashBord_DAL.pdb
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\bin\Release\Encryption.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\bin\Release\MedicaDAL.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\bin\Release\Newtonsoft.Json.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\bin\Release\Microsoft.Web.Administration.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\bin\Release\Newtonsoft.Json.xml
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\obj\Release\DashBord_DAL.csproj.AssemblyReference.cache
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\obj\Release\DashBord_DAL.csproj.CoreCompileInputs.cache
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\obj\Release\DashBord_DAL.csproj.CopyComplete
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\obj\Release\DashBord_DAL.dll
+E:\projects\Health-Inside\New folder (5)\UpgradeDashBordAPI\DashBord_DAL\obj\Release\DashBord_DAL.pdb

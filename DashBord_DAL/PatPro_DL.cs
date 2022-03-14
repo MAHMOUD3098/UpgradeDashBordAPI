@@ -1608,5 +1608,78 @@ namespace DashBord_DAL
         }
 
 
+
+        //new project
+
+        public DataTable GetIsOrderEpisode(string Eps_Key)
+        {
+            DataTable data = dbcon.GetData("Select * from episode where Pat_Episode_Typ = 1 and episod_key =   " + Eps_Key);
+            return data;
+        }
+
+
+
+        public string GetEnableOrderSets(string HID)
+        {
+            var SelectString = "Select EnableOrderSets from sysParameters  WITH (nolock) where HospitalID =  " + HID;
+            return dbcon.GetData(SelectString).Rows[0][0].ToString() == "" ? "" : dbcon.GetData(SelectString).Rows[0][0].ToString();
+        }
+
+
+        public DataTable GetUserDefScreen(string User_Id)
+        {
+            dbcon = new DBInteraction(true);
+            var SelectString = "Select ScreenDefName from UserDefWebScreen WITH (nolock)  where (pat_id is null or pat_id = '') and  staff_key = " + User_Id;
+            DataTable data = dbcon.GetData(SelectString);
+            return data;
+        }
+
+
+
+        public string Eps_Status(string Eps_Key)
+        {
+            dbcon = new DBInteraction(true);
+
+            var SelectString = "Select Episode_type from Episode  WITH (nolock)  where  Episod_key = " + Eps_Key;
+            DataTable dt = dbcon.GetData(SelectString);
+            return dt.Rows.Count == 0 ? "" : dt.Rows[0][0].ToString();
+        }
+
+        public string GetGender(string PID)
+        {
+
+            dbcon = new DBInteraction(true);
+            DataTable dt = dbcon.GetData("select patient_sex from patient where patient_id = '" + PID + "'");
+            return dt.Rows.Count == 0 ? "" : dt.Rows[0][0].ToString();
+
+        }
+
+
+        private string getDateStringFilter(string from, string to) => "((Note_Date <= '" + to + "' AND Note_Date >= '" + from + "' ) )";
+
+
+        public DataTable GetAssessmentsData(
+      string Patient_ID,
+      DateTime FromDate,
+      DateTime ToDate)
+        {
+            var SelectString = "select distinct SheetKey,SheetDefKey,TemplateKey,IntelliReports.Status,IntelliReports.ReportKey, 0 as EpisodeKey ,  sheetemplates.Description, Staff.Staff_name,   IntelliReports.DateTimeStamp ,  SheetKey as PATIENT_ID , Staff.Staff_Key   , (select count(*) from AttachNote where  EntryDataType = 2 and  AttachNote.noteid = IntelliReports.ReportKey ) as Attach   FROM            sheetemplates  WITH (nolock)  INNER JOIN           IntelliReports  WITH (nolock)  ON sheetemplates.sys_key = IntelliReports.TemplateKey INNER JOIN          Staff  WITH (nolock)  ON IntelliReports.UserKey = Staff.Staff_Key    where    SheetKey = " + Patient_ID + "    and ReportKey = (select top 1 ierp.ReportKey from  IntelliReports as ierp where ierp.TemplateKey = IntelliReports.TemplateKey   and   SheetKey = " + Patient_ID + " order by DateTimeStamp desc)   and " + this.getDateStringFilter(Utilities.FormatDateClr(FromDate), Utilities.FormatDateClr(ToDate)) + " order by DateTimeStamp desc";
+            return this.dbcon.GetData(SelectString);
+        }
+        public static DataTable GetLastVisit(string PID, string Eps_key)
+        {
+            DBInteraction dbInteraction = new DBInteraction(true);
+            DataTable data2 = new DataTable();
+            string str1 = "select start_date,pat_episode_typ  from Episode where patient_id = '" + PID + "' and episod_key = " + Eps_key;
+            DataTable data1 = dbInteraction.GetData(str1);
+            if (data1.Rows.Count > 0 && data1.Rows[0]["pat_episode_typ"].ToString() == "2")
+            {
+                string str2 = "select top 2 start_date,pat_episode_typ  from Episode where patient_id = '" + PID + "' and pat_episode_typ = 2 order by  episod_key desc";
+                data2 = dbInteraction.GetData(str2);
+            }
+            return data2;
+        }
+
+
     }
 }
