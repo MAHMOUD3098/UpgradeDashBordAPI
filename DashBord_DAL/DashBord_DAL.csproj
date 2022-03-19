@@ -61,19 +61,14 @@
     <Compile Include="ClsDescStatus.cs" />
     <Compile Include="ClsDocNGroup.cs" />
     <Compile Include="ClsDocNUser.cs" />
-    <Compile Include="ConstantsVariables.cs" />
     <Compile Include="DrugAdminInfo.cs" />
     <Compile Include="IT_Sheet.cs" />
     <Compile Include="PatDoc_DL.cs" />
     <Compile Include="PatPro_DL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sheet.cs" />
-    <Compile Include="SheetFactory.cs" />
     <Compile Include="SheetItem_1.cs" />
     <Compile Include="SheetsRep.cs" />
-    <Compile Include="SheetUI.cs" />
     <Compile Include="Staff.cs" />
-    <Compile Include="UserSignOff.cs" />
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>

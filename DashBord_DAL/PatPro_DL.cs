@@ -1301,7 +1301,7 @@ namespace DashBord_DAL
         }
 
 
-        private string getDateStringFilter(string from, string to) => "((Note_Date <= '" + to + "' AND Note_Date >= '" + from + "' ) )";
+        private string getDateStringFilter(string from, string to) => "((IntelliReports.DateTimeStamp <= '" + to + "' AND IntelliReports.DateTimeStamp >= '" + from + "' ) )";
 
 
         public DataTable GetAssessmentsData(
@@ -1309,7 +1309,14 @@ namespace DashBord_DAL
       DateTime FromDate,
       DateTime ToDate)
         {
-            var SelectString = "select distinct SheetKey,SheetDefKey,TemplateKey,IntelliReports.Status,IntelliReports.ReportKey, 0 as EpisodeKey ,  sheetemplates.Description, Staff.Staff_name,   IntelliReports.DateTimeStamp ,  SheetKey as PATIENT_ID , Staff.Staff_Key   , (select count(*) from AttachNote where  EntryDataType = 2 and  AttachNote.noteid = IntelliReports.ReportKey ) as Attach   FROM            sheetemplates  WITH (nolock)  INNER JOIN           IntelliReports  WITH (nolock)  ON sheetemplates.sys_key = IntelliReports.TemplateKey INNER JOIN          Staff  WITH (nolock)  ON IntelliReports.UserKey = Staff.Staff_Key    where    SheetKey = " + Patient_ID + "    and ReportKey = (select top 1 ierp.ReportKey from  IntelliReports as ierp where ierp.TemplateKey = IntelliReports.TemplateKey   and   SheetKey = " + Patient_ID + " order by DateTimeStamp desc)   and " + this.getDateStringFilter(Utilities.FormatDateClr(FromDate), Utilities.FormatDateClr(ToDate)) + " order by DateTimeStamp desc";
+            var SelectString = "select distinct SheetKey,SheetDefKey,TemplateKey,IntelliReports.Status,IntelliReports.ReportKey, 0 as EpisodeKey ,  " +
+                "sheetemplates.Description, Staff.Staff_name,   IntelliReports.DateTimeStamp ,  SheetKey as PATIENT_ID , Staff.Staff_Key   , " +
+                "(select count(*) from AttachNote where  EntryDataType = 2 and  AttachNote.noteid = IntelliReports.ReportKey ) as Attach   FROM       " +
+                "     sheetemplates  WITH (nolock)  INNER JOIN           IntelliReports  WITH (nolock)  ON sheetemplates.sys_key = IntelliReports.TemplateKey INNER JOIN       " +
+                "   Staff  WITH (nolock)  ON IntelliReports.UserKey = Staff.Staff_Key    where    SheetKey = " + Patient_ID + "    " +
+                "and ReportKey = (select top 1 ierp.ReportKey from  IntelliReports as ierp where ierp.TemplateKey = IntelliReports.TemplateKey " +
+                "  and   SheetKey = " + Patient_ID + " order by DateTimeStamp desc)   and " + this.getDateStringFilter(Utilities.FormatDateClr(FromDate),
+                Utilities.FormatDateClr(ToDate)) + " order by DateTimeStamp desc";
             return this.dbcon.GetData(SelectString);
         }
         public static DataTable GetLastVisit(string PID, string Eps_key)

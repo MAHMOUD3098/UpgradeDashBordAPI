@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 
@@ -14,8 +15,12 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
+                string rettaksemr = "";
                 DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
-
+               // rettaksemr = await Task.Run(() =>Logc.GetEMRAccessModule(UserKey.ToString()));
+                //Task<string> sd = new Task<string>(()=>Logc.GetEMRAccessModule(UserKey.ToString()));
+                //sd.Start();
+                //await sd;
                 return Logc.GetEMRAccessModule(UserKey.ToString());
             }
             catch(Exception er)
@@ -158,7 +163,7 @@ namespace UpgradeDashBord_API.Controllers
 
 
 
-        public string GetAssessmentsData(
+        public dynamic GetAssessmentsData(
         string Patient_ID,
         DateTime FromDate,
         DateTime ToDate)

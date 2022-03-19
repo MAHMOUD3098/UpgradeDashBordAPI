@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DashBord_BL
 {
-    class Assessments
+   public class Assessments
     {
         public string AttachNote { get; set; }
         public string SheetKey { get; set; }

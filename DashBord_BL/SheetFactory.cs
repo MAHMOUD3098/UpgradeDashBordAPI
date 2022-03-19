@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DashBord_DAL
+namespace DashBord_BL
 {
-    public class ConstantsVariables
+    //--SheetFactory class
+    public class SheetFactory
     {
-        public enum SheetStatus
+        public virtual Sheet createSheet()
         {
-            Recoreded,
-            Cancelled,
-            Signed
+            return new Sheet();
         }
     }
 }
