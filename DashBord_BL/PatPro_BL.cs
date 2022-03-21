@@ -803,7 +803,7 @@ namespace DashBord_BL
 
 
 
-        public string GetAssessmentsData(
+        public List<Assessments> GetAssessmentsData(
         string Patient_ID,
         DateTime FromDate,
         DateTime ToDate)
@@ -837,7 +837,7 @@ namespace DashBord_BL
                 }
                 assessmentsData.Add(assessments);
             }
-            return JsonConvert.SerializeObject(assessmentsData);
+            return (assessmentsData);
         }
 
 

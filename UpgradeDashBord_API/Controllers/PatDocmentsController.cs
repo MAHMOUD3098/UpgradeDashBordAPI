@@ -104,7 +104,7 @@ namespace UpgradeDashBord_API.Controllers
             }
             catch (Exception e)
             {
-                return e.Message.ToString();
+                return e.ToString();
             }
         }
 
@@ -147,21 +147,22 @@ namespace UpgradeDashBord_API.Controllers
         }
 
         [HttpGet]
-        public string getSheetReports(string HId)
+        public dynamic getSheetReports(string HId)
         {
             try
             {
                 DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
-                return logic.getSheetReports(HId);
+                var df = logic.getSheetReports(HId);
+                return df;
             }
             catch (Exception e)
             {
-                return e.Message.ToString();
+                return e.ToString();
             }
         }
 
         [HttpGet]
-        public string GetSheetsResultsByOrderKey(string Patient_ID, string OrderKey, string User_ID)
+        public dynamic GetSheetsResultsByOrderKey(string Patient_ID, string OrderKey, string User_ID)
         {
             try
             {
@@ -170,7 +171,7 @@ namespace UpgradeDashBord_API.Controllers
             }
             catch (Exception e)
             {
-                return e.Message.ToString();
+                return e.ToString();
             }
         }
     }

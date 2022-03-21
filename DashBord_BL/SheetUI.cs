@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DashBord_DAL
+namespace DashBord_BL
 {
     //--GetSheetsResults SheetUI class
     public class SheetUI : Sheet

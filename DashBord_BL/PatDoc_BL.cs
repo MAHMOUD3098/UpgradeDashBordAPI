@@ -6,7 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DashBord_DAL;
 using Newtonsoft.Json;
-using static DashBord_DAL.ConstantsVariables;
+using static DashBord_BL.ConstantsVariables;
+//using static DashBord_DAL.ConstantsVariables;
 
 namespace DashBord_BL
 {
@@ -710,7 +711,7 @@ namespace DashBord_BL
             return dl.getSheetReportsDef(HId);
         }
 
-        public string getSheetReports(string HId)
+        public List<SheetsRep> getSheetReports(string HId)
         {
             DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
             List<SheetsRep> sheetReports = new List<SheetsRep>();
@@ -725,7 +726,7 @@ namespace DashBord_BL
                 text = "Add Document"
             });
 
-            foreach (DataRow row in (InternalDataCollectionBase)data.Rows)
+            foreach (DataRow row in data.Rows)
                 sheetReports.Add(new SheetsRep()
                 {
                     text = row["Description"].ToString(),
@@ -733,19 +734,20 @@ namespace DashBord_BL
                 });
 
 
-            return JsonConvert.SerializeObject(dl.getSheetReports(HId));
+            return (sheetReports);
         }
 
-        public string GetSheetsResultsByOrderKey(string Patient_ID, string OrderKey, string User_ID)
+        public List<Sheet> GetSheetsResultsByOrderKey(string Patient_ID, string OrderKey, string User_ID)
         {
             //DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
             //return JsonConvert.SerializeObject(dl.GetSheetsResultsByOrderKey(Patient_ID, OrderKey, User_ID));
+            List<SheetUI> list = new List<SheetUI>();
             SheetFactory factory = new SheetFactory();
             List<Sheet> source = new List<Sheet>();
             DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
             DataTable dtf1 = dl.EMRFavorites(dl.getUserId());
             DataTable dtf2 = dl.EMRSignOff("9", dl.getUserId(), Patient_ID);
-            foreach (DataRow row in (InternalDataCollectionBase)dl.GetSheetsDataByOrderKey(Patient_ID, OrderKey).Rows)
+            foreach (DataRow row in dl.GetSheetsDataByOrderKey(Patient_ID, OrderKey).Rows)
             {
                 DataRow dr = row;
                 if (source.Where<Sheet>((Func<Sheet, bool>)(raad => raad.SheetType == dr["SheetType"].ToString() && raad.SheetCode == "0")).Count<Sheet>() == 0)
@@ -835,7 +837,7 @@ namespace DashBord_BL
                 else
                     sheet1.SheetStatus = SheetStatus.Recoreded;
             }
-            foreach (DataRow row in (InternalDataCollectionBase)dl.GetTemplatesDataByOrderKey(Patient_ID, OrderKey).Rows)
+            foreach (DataRow row in dl.GetTemplatesDataByOrderKey(Patient_ID, OrderKey).Rows)
             {
                 DataRow dr = row;
                 if (source.Where<Sheet>((Func<Sheet, bool>)(raad => raad.SheetType == dr["Type"].ToString() && raad.SheetCode == "0")).Count<Sheet>() == 0)
@@ -904,7 +906,55 @@ namespace DashBord_BL
                     sheet2.IconEMRFavorites = "Images/Gen/star_grey.ico";
                 }
             }
-            return JsonConvert.SerializeObject(source);
+           // List<SheetUI> SheetResUI = source.Cast<SheetUI>().ToList();
+            foreach (Sheet sheetUi in source)
+            {
+                sheetUi.SheetStatusDesc = sheetUi.SheetStatus.ToString();
+                sheetUi.SheetStatusDesc = sheetUi.SheetStatusDesc.Replace("Recoreded", "Recorded");
+                if (sheetUi.SheetDate != null)
+                {
+                    sheetUi.SheetDateDisplay = String.Format("{0:dd-MMM-yy}", Convert.ToDateTime(sheetUi.SheetDate.ToString()));  // this.InvDate.ToString();
+                }
+                else
+                {
+                    if (sheetUi.SheetCode == "0")
+                    {
+                        sheetUi.SheetStatusDesc = "Recorded";
+                    }
+                    else
+                    {
+                        sheetUi.SheetStatusDesc = "Open";
+                    }
+                }
+                if (sheetUi.SheetTime != null)
+                    sheetUi.SheetTimeDisplay = String.Format("{0:HH:mm}", Convert.ToDateTime(sheetUi.SheetTime.ToString()));  // this.InvDate.ToString();
+
+                if (sheetUi.OrderType == "2")
+                {
+                    sheetUi.SheetStatusImg = "Images/ProcImages/book_open.ico";
+                }
+                else if (sheetUi.OrderType == "3")
+                {
+                    sheetUi.SheetStatusImg = "Images/OPTImages/OrderOPT.png";
+                }
+                else
+                {
+                    switch (sheetUi.SheetStatus)
+                    {
+                        case ConstantsVariables.SheetStatus.Cancelled:
+                            sheetUi.SheetStatusImg = "Images/SheetImages/cancel_sht.ico";
+                            break;
+                        case ConstantsVariables.SheetStatus.Recoreded:
+                            sheetUi.SheetStatusImg = "Images/SheetImages/new_sht.ico";
+                            break;
+                        case ConstantsVariables.SheetStatus.Signed:
+                            sheetUi.SheetStatusImg = "Images/SheetImages/sign_sht.ico";
+                            break;
+                    }
+                }
+            }
+               // sheetUi.UpdateUI();
+            return (source);
         }
 
         public string getQuery(string query)

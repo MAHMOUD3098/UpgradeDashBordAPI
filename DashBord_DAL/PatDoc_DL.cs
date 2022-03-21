@@ -176,7 +176,13 @@ namespace DashBord_DAL
         private string getDateStringFilter(string from, string to)
         {
             return "( " +
-                "(order_date <= '" + to + "' AND order_date >= '" + from + "' ) or (odate > getdate())  " +
+                "(order_date <= '" + to + "' AND order_date >= '" + from + "' )   " +
+                ")";
+        }
+        private string getDateStringFilterNotedate(string from, string to)
+        {
+            return "( " +
+                "(Note_Date  <= '" + to + "' AND Note_Date  >= '" + from + "' )   " +
                 ")";
         }
 
@@ -289,17 +295,29 @@ namespace DashBord_DAL
             if (dbcon.GetData(str).Rows[0][0].ToString() == "1")
             {
                 string userGroup = this.GetUserGroup(U_id);
-                data = dbcon.GetData("select Count(*) as cco from   DBO.DOCPNOTE INNER JOIN  DBO.STAFF ON DBO.DOCPNOTE.NOTE_SIGNATURE = DBO.STAFF.STAFF_KEY INNER JOIN   DBO.JOBDESCRIPTION ON DBO.STAFF.STAFF_FK = DBO.JOBDESCRIPTION.JD_KEY INNER JOIN   DBO.SPECIALTY ON DBO.STAFF.STAFF_SPEC = DBO.SPECIALTY.SPECIALTY_KEY LEFT OUTER JOIN  DBO.DIGNOSISV ON DBO.DOCPNOTE.DIAGNOSIS_KEY = DBO.DIGNOSISV.SYS_KEY   where (cast(Note_Text as nvarchar(max))  <> '' or cast(PLAN_ACTION_NOTE as nvarchar(max))  <> '' )  and   DOCPNOTE.Patient_id  = '" + Patient_ID + "' and DBO.JOBDESCRIPTION.JD_KEY = " + userGroup + "  and  MODIFIED = 0 and " + this.getDateStringFilter(Utilities.FormatDateFrom(FromDate), Utilities.FormatDate(ToDate)) ?? "");
+                data = dbcon.GetData("select Count(*) as cco from   DBO.DOCPNOTE INNER JOIN  DBO.STAFF ON DBO.DOCPNOTE.NOTE_SIGNATURE = DBO.STAFF.STAFF_KEY INNER JOIN   " +
+                    "DBO.JOBDESCRIPTION ON DBO.STAFF.STAFF_FK = DBO.JOBDESCRIPTION.JD_KEY INNER JOIN   DBO.SPECIALTY ON DBO.STAFF.STAFF_SPEC = DBO.SPECIALTY.SPECIALTY_KEY LEFT OUTER JOIN " +
+                    " DBO.DIGNOSISV ON DBO.DOCPNOTE.DIAGNOSIS_KEY = DBO.DIGNOSISV.SYS_KEY   where (cast(Note_Text as nvarchar(max))  <> '' or cast(PLAN_ACTION_NOTE as nvarchar(max))  <> '' )" +
+                    "  and   DOCPNOTE.Patient_id  = '" + Patient_ID + "' and DBO.JOBDESCRIPTION.JD_KEY = " + userGroup + "  and  MODIFIED = 0 and " + this.getDateStringFilterNotedate(Utilities.FormatDateFrom(FromDate), Utilities.FormatDate(ToDate)) ?? "");
             }
             else
-                data = dbcon.GetData("select Count(*) as cco from   DBO.DOCPNOTE INNER JOIN  DBO.STAFF ON DBO.DOCPNOTE.NOTE_SIGNATURE = DBO.STAFF.STAFF_KEY INNER JOIN   DBO.JOBDESCRIPTION ON DBO.STAFF.STAFF_FK = DBO.JOBDESCRIPTION.JD_KEY INNER JOIN   DBO.SPECIALTY ON DBO.STAFF.STAFF_SPEC = DBO.SPECIALTY.SPECIALTY_KEY LEFT OUTER JOIN  DBO.DIGNOSISV ON DBO.DOCPNOTE.DIAGNOSIS_KEY = DBO.DIGNOSISV.SYS_KEY    where (cast(Note_Text as nvarchar(max))  <> '' or cast(PLAN_ACTION_NOTE as nvarchar(max))  <> '' )  and   DOCPNOTE.Patient_id  = '" + Patient_ID + "'  and  MODIFIED = 0 and " + this.getDateStringFilter(Utilities.FormatDateFrom(FromDate), Utilities.FormatDate(ToDate)) ?? "");
+                data = dbcon.GetData("select Count(*) as cco from   DBO.DOCPNOTE INNER JOIN  DBO.STAFF ON DBO.DOCPNOTE.NOTE_SIGNATURE = DBO.STAFF.STAFF_KEY INNER JOIN   DBO.JOBDESCRIPTION ON DBO.STAFF.STAFF_FK = DBO.JOBDESCRIPTION.JD_KEY INNER JOIN   DBO.SPECIALTY ON DBO.STAFF.STAFF_SPEC = DBO.SPECIALTY.SPECIALTY_KEY LEFT OUTER JOIN  DBO.DIGNOSISV ON DBO.DOCPNOTE.DIAGNOSIS_KEY = DBO.DIGNOSISV.SYS_KEY    where (cast(Note_Text as nvarchar(max))  <> '' or cast(PLAN_ACTION_NOTE as nvarchar(max))  <> '' )  and   DOCPNOTE.Patient_id  = '" + Patient_ID + "'  and  MODIFIED = 0 and " + this.getDateStringFilterNotedate(Utilities.FormatDateFrom(FromDate), Utilities.FormatDate(ToDate)) ?? "");
             return data.Rows[0][0].ToString();
         }
 
         public string getSheetReportsDef(string HId) => HId.Trim() == "" ? "" : dbcon.GetData("select  ClinicalSheetTemplateKeys  from GetSystemParameters (" + HId + ")").Rows[0][0].ToString();
 
-        public string getSheetReports(string HId) => dbcon.GetData("select  ClinicalSheetTemplateKeys  from GetSystemParameters (" + HId + ")").Rows[0][0].ToString();
-
+        // public string getSheetReports(string HId) => dbcon.GetData("select  ClinicalSheetTemplateKeys  from GetSystemParameters (" + HId + ")").Rows[0][0].ToString();
+      public  string getSheetReports(string HId)
+        {
+            string reslt = "";
+            DataTable dt = dbcon.GetData("select  ClinicalSheetTemplateKeys  from GetSystemParameters (" + dbcon.HospitalId + ")");
+            if (dt.Rows.Count > 0)
+            {
+                reslt = dt.Rows[0][0].ToString();
+            }
+            return reslt;
+        }
         public DataTable getSheetReportsBySysKey(string sysKey) => dbcon.GetData("select sys_key,Description from sheetemplates where sys_key in (" + sysKey + ")");
 
         public DataTable GetSheetsDataByOrderKey(string Patient_ID, string OrderKey)

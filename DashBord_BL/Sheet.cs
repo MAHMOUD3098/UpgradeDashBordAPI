@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DashBord_DAL
+namespace DashBord_BL
 {
     //--Sheet class
     public class Sheet
     {
+        public string SheetStatusImg { get; set; }
+        public string SheetStatusDesc { get; set; }
+        public string SheetDateDisplay { get; set; }
+        public string SheetTimeDisplay { get; set; }
         public string User_Key { set; get; }
         public string SheetCode { set; get; }
         public string Sheetsort { set; get; }

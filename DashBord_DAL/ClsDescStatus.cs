@@ -51,7 +51,7 @@ namespace DashBord_DAL
         public string OrdDet_Key { set; get; }
         public string IsEMRSignOff { set; get; }
         public string IconEMRSignOff { set; get; }
-        public List<UserSignOff> UsersSignOff { set; get; }
+      //  public List<UserSignOff> UsersSignOff { set; get; }
         // public ClsDescStatus obj { get { return this; } }
         public List<SheetItem_1> Sheets { get; set; }
         public List<IT_Sheet> OptSheets { get; set; }
