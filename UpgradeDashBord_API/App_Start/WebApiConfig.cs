@@ -12,6 +12,9 @@ namespace UpgradeDashBord_API
             // Web API configuration and services
 
             // Web API routes
+            //var json = config.Formatters.JsonFormatter;
+            //json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            //config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

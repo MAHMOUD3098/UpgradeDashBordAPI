@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,13 +10,14 @@ namespace DashBord_DAL
 {
     public class PatDoc_DL
     {
-        public MedicaDAL.DBInteraction dbcon;
-
-        public PatDoc_DL()
+        //  public MedicaDAL.DBInteraction dbcon;
+       private IRepository dbcon;
+        public PatDoc_DL(IRepository _dbcon)
         {
-            dbcon = new MedicaDAL.DBInteraction(true);
+            dbcon = _dbcon;
+             
         }
-
+        
         public DataTable GetDocsForPat(string PID)
         {
             DataTable dt = null;
@@ -92,7 +94,7 @@ namespace DashBord_DAL
 
         public string getUserId()
         {
-            return dbcon.UserKey;
+            return dbcon.UserKey();
         }
 
         public DataTable GetSheetsProcData(string Patient_ID, DateTime FromDate, DateTime ToDate)
@@ -311,7 +313,7 @@ namespace DashBord_DAL
       public  string getSheetReports(string HId)
         {
             string reslt = "";
-            DataTable dt = dbcon.GetData("select  ClinicalSheetTemplateKeys  from GetSystemParameters (" + dbcon.HospitalId + ")");
+            DataTable dt = dbcon.GetData("select  ClinicalSheetTemplateKeys  from GetSystemParameters (" + dbcon.HospitalId() + ")");
             if (dt.Rows.Count > 0)
             {
                 reslt = dt.Rows[0][0].ToString();
@@ -341,5 +343,7 @@ namespace DashBord_DAL
 
             return dt.Rows[0][0].ToString();
         }
+      
+
     }
 }

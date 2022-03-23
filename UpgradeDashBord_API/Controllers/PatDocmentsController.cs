@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using DashBord_BL;
 using Newtonsoft.Json;
@@ -10,14 +11,19 @@ namespace UpgradeDashBord_API.Controllers
 {
     public class PatDocmentsController : ApiController
     {
+        private DashBord_BL.EMRLogic<object> Logcs;
+        public PatDocmentsController()
+        {
+            Logcs = new DashBord_BL.EMRLogic<object>(1);
+        }
         [HttpGet]
         public string GetDocsForPat(string PID)
         {
             try
             {
-                DashBord_BL.PatDoc_BL Logc = new DashBord_BL.PatDoc_BL();
+             //  DashBord_BL.PatDoc_BL Logc = new DashBord_BL.PatDoc_BL();
 
-                return Logc.GetDocsForPat(PID);
+                return Logcs.GetPatDoc_BL().GetDocsForPat(PID);
             }
             catch (Exception ex)
             {
@@ -30,9 +36,9 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
+             //   DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
 
-                return logic.GetSheetsResults(Patient_ID, FromDate, ToDate, HID, Eps_Key);
+                return Logcs.GetPatDoc_BL().GetSheetsResults(Patient_ID, FromDate, ToDate, HID, Eps_Key);
             }
             catch (Exception er)
             {
@@ -45,9 +51,9 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
+               // DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
 
-                return logic.GetAllPNotes(PID, User_ID, FromDate, ToDate);
+                return Logcs.GetPatDoc_BL().GetAllPNotes(PID, User_ID, FromDate, ToDate);
             }
             catch (Exception er)
             {
@@ -60,9 +66,9 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
+                //DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
 
-                return logic.GetDocNGrp(PID);
+                return Logcs.GetPatDoc_BL().GetDocNGrp(PID);
             }
             catch (Exception er)
             {
@@ -75,18 +81,18 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
+               // DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
                 if (PID.Trim() == "" || Eps_Key.Trim() == "" || User_Id.Trim() == "" || HID.Trim() == "")
                     return;
                 string str1 = "select SYSPARAMETERS.episodesheets from SYSPARAMETERS where HospitalID =  " + HID;
-                string str2 = logic.getQuery(str1);
+                string str2 = Logcs.GetPatDoc_BL().getQuery(str1);
                 string str3 = str2.Replace(",", "^");
                 if (!(str2 != ""))
                     return;
                 string str4 = "select count(*)  as cc from msheetorder where sheet_key in (" + str2 + ") and episode_key = " + Eps_Key;
 
-                if (logic.getQuery(str4).ToString() == "0")
-                    logic.SetOrderSheetSysParam(str3 + "^", PID, Eps_Key, User_Id, "0");
+                if (Logcs.GetPatDoc_BL().getQuery(str4).ToString() == "0")
+                    Logcs.GetPatDoc_BL().SetOrderSheetSysParam(str3 + "^", PID, Eps_Key, User_Id, "0");
             }
             catch (Exception e)
             {
@@ -99,8 +105,8 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
-                return logic.SheetisPriavate(HID);
+               // DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
+                return Logcs.GetPatDoc_BL().SheetisPriavate(HID);
             }
             catch (Exception e)
             {
@@ -123,8 +129,8 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
-                return logic.getNoteCount(Patient_ID, FromDate, ToDate, U_id);
+                //DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
+                return Logcs.GetPatDoc_BL().getNoteCount(Patient_ID, FromDate, ToDate, U_id);
             }
             catch (Exception e)
             {
@@ -137,8 +143,8 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
-                return logic.getSheetReportsDef(HId);
+               // DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
+                return Logcs.GetPatDoc_BL().getSheetReportsDef(HId);
             }
             catch (Exception e)
             {
@@ -151,8 +157,8 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
-                var df = logic.getSheetReports(HId);
+               // DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
+                var df = Logcs.GetPatDoc_BL().getSheetReports(HId);
                 return df;
             }
             catch (Exception e)
@@ -166,13 +172,14 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
-                return logic.GetSheetsResultsByOrderKey(Patient_ID, OrderKey, User_ID);
+                //DashBord_BL.PatDoc_BL logic = new DashBord_BL.PatDoc_BL();
+                return Logcs.GetPatDoc_BL().GetSheetsResultsByOrderKey(Patient_ID, OrderKey, User_ID);
             }
             catch (Exception e)
             {
                 return e.ToString();
             }
         }
+        
     }
 }

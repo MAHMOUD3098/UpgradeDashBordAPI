@@ -13,9 +13,17 @@ namespace DashBord_BL
 {
     public class PatDoc_BL
     {
+      private  DashBord_DAL.PatDoc_DL dal;
+        private RepositoryDb<object>   df;
+
+        public PatDoc_BL()
+        {
+            df = new RepositoryDb<object>();
+            dal = new DashBord_DAL.PatDoc_DL(df.getDal());
+        }
         public string GetDocsForPat(string PID)
         {
-            DashBord_DAL.PatDoc_DL dal = new DashBord_DAL.PatDoc_DL();
+            
             List<DashBord_DAL.Staff> docs = new List<DashBord_DAL.Staff>();
             DataTable DsDt = dal.GetDocsForPat(PID);
             foreach (DataRow Dr in DsDt.Rows)
@@ -36,20 +44,20 @@ namespace DashBord_BL
             //SheetsDL Proc = new SheetsDL();
             //GeneralDL Gen = new GeneralDL();
             // replace with our dal //
-            DashBord_DAL.PatDoc_DL db_access = new PatDoc_DL();
-            DataTable dtfvr = db_access.EMRFavorites(db_access.getUserId());
-            DataTable dtsoff = db_access.EMRSignOff("9", db_access.getUserId(), Patient_ID);
+        //    DashBord_DAL.PatDoc_DL da = new PatDoc_DL();
+            DataTable dtfvr = dal.EMRFavorites(dal.getUserId());
+            DataTable dtsoff = dal.EMRSignOff("9", dal.getUserId(), Patient_ID);
             DataTable dtresult = null;
 
             SheetFactory factory = new SheetFactory();
 
-            dtresult = db_access.GetSheetsOPTData(Patient_ID, FromDate, ToDate);
+            dtresult = dal.GetSheetsOPTData(Patient_ID, FromDate, ToDate);
             foreach (DataRow dr in dtresult.Rows)
             {
                 if (SheetRes.Where(raad => raad.SheetType == dr["SheetType"].ToString() && raad.SheetCode == "0").Count() == 0)
                 {
                     Sheet SheetRecTT = factory.createSheet();
-                    SheetRecTT.User_Key = db_access.getUserId();
+                    SheetRecTT.User_Key = dal.getUserId();
                     SheetRecTT.SheetCode = "0";
 
                     SheetRecTT.SheetDesc = dr["SheetType"].ToString();
@@ -89,7 +97,7 @@ namespace DashBord_BL
                 SheetRec.PID = dr["Patient_id"].ToString();
                 SheetRec.SheetDescStatus = dr["InvordStatus"].ToString();//.Split("<br>".ToCharArray());
 
-                bool xxcc = db_access.IsEMRFavorites(SheetRec.SheetCode, "4", db_access.getUserId(), dtfvr);
+                bool xxcc = dal.IsEMRFavorites(SheetRec.SheetCode, "4", dal.getUserId(), dtfvr);
                 if (xxcc == true)
                 {
                     SheetRec.IsEMRFavorites = "1";
@@ -100,7 +108,7 @@ namespace DashBord_BL
                     SheetRec.IsEMRFavorites = "0";
                     SheetRec.IconEMRFavorites = "Images/Gen/star_grey.ico";
                 }
-                xxcc = db_access.IsEMRSignOff(SheetRec.SheetOrd_Key, "9", db_access.getUserId(), Patient_ID, dtsoff);
+                xxcc = dal.IsEMRSignOff(SheetRec.SheetOrd_Key, "9", dal.getUserId(), Patient_ID, dtsoff);
                 if (xxcc == true)
                 {
                     SheetRec.IsEMRSignOff = "1";
@@ -133,13 +141,13 @@ namespace DashBord_BL
             }
 
 
-            dtresult = db_access.GetSheetsProcData(Patient_ID, FromDate, ToDate);
+            dtresult = dal.GetSheetsProcData(Patient_ID, FromDate, ToDate);
             foreach (DataRow dr in dtresult.Rows)
             {
                 if (SheetRes.Where(raad => raad.SheetType == dr["SheetType"].ToString() && raad.SheetCode == "0").Count() == 0)
                 {
                     Sheet SheetRecTT = factory.createSheet();
-                    SheetRecTT.User_Key = db_access.getUserId();
+                    SheetRecTT.User_Key = dal.getUserId();
                     SheetRecTT.SheetCode = "0";
                     // SheetRes.Add(SheetRec);
 
@@ -179,7 +187,7 @@ namespace DashBord_BL
                 SheetRec.PID = dr["Patient_id"].ToString();
                 SheetRec.SheetDescStatus = dr["InvordStatus"].ToString();//.Split("<br>".ToCharArray());
 
-                bool xxcc = db_access.IsEMRFavorites(SheetRec.SheetCode, "4", db_access.getUserId(), dtfvr);
+                bool xxcc = dal.IsEMRFavorites(SheetRec.SheetCode, "4", dal.getUserId(), dtfvr);
                 if (xxcc == true)
                 {
                     SheetRec.IsEMRFavorites = "1";
@@ -190,7 +198,7 @@ namespace DashBord_BL
                     SheetRec.IsEMRFavorites = "0";
                     SheetRec.IconEMRFavorites = "Images/Gen/star_grey.ico";
                 }
-                xxcc = db_access.IsEMRSignOff(SheetRec.SheetOrd_Key, "9", db_access.getUserId(), Patient_ID, dtsoff);
+                xxcc = dal.IsEMRSignOff(SheetRec.SheetOrd_Key, "9", dal.getUserId(), Patient_ID, dtsoff);
                 if (xxcc == true)
                 {
                     SheetRec.IsEMRSignOff = "1";
@@ -225,13 +233,13 @@ namespace DashBord_BL
 
             #region Sheets
             //dtresult = Proc.GetSheetsData(Patient_ID, FromDate, ToDate);
-            dtresult = db_access.GetSheetsData(Patient_ID, FromDate, ToDate);
+            dtresult = dal.GetSheetsData(Patient_ID, FromDate, ToDate);
             foreach (DataRow dr in dtresult.Rows)
             {
                 if (SheetRes.Where(raad => raad.SheetType == dr["SheetType"].ToString() && raad.SheetCode == "0").Count() == 0)
                 {
                     Sheet SheetRecTT = factory.createSheet();
-                    SheetRecTT.User_Key = db_access.getUserId();
+                    SheetRecTT.User_Key = dal.getUserId();
                     SheetRecTT.SheetCode = "0";
                     // SheetRes.Add(SheetRec);
 
@@ -273,7 +281,7 @@ namespace DashBord_BL
                 SheetRec.PID = dr["Patient_id"].ToString();
                 SheetRec.SheetDescStatus = dr["InvordStatus"].ToString();//.Split("<br>".ToCharArray());
 
-                bool xxcc = db_access.IsEMRFavorites(SheetRec.SheetCode, "5", db_access.getUserId(), dtfvr);
+                bool xxcc = dal.IsEMRFavorites(SheetRec.SheetCode, "5", dal.getUserId(), dtfvr);
                 if (xxcc == true)
                 {
                     SheetRec.IsEMRFavorites = "1";
@@ -284,7 +292,7 @@ namespace DashBord_BL
                     SheetRec.IsEMRFavorites = "0";
                     SheetRec.IconEMRFavorites = "Images/Gen/star_grey.ico";
                 }
-                xxcc = db_access.IsEMRSignOff(SheetRec.SheetOrd_Key, "9", db_access.getUserId(), Patient_ID, dtsoff);
+                xxcc = dal.IsEMRSignOff(SheetRec.SheetOrd_Key, "9", dal.getUserId(), Patient_ID, dtsoff);
                 if (xxcc == true)
                 {
                     SheetRec.IsEMRSignOff = "1";
@@ -331,13 +339,13 @@ namespace DashBord_BL
 
             #region Templates
             //dtresult = Proc.GetTemplatesData(Patient_ID, FromDate, ToDate);
-            dtresult = db_access.GetTemplatesData(Patient_ID, FromDate, ToDate);
+            dtresult = dal.GetTemplatesData(Patient_ID, FromDate, ToDate);
             foreach (DataRow dr in dtresult.Rows)
             {
                 if (SheetRes.Where(raad => raad.SheetType == dr["Type"].ToString() && raad.SheetCode == "0").Count() == 0)
                 {
                     Sheet SheetRecTT = factory.createSheet();
-                    SheetRecTT.User_Key = db_access.getUserId();
+                    SheetRecTT.User_Key = dal.getUserId();
                     SheetRecTT.SheetCode = "0";
                     // SheetRes.Add(SheetRec);
 
@@ -392,13 +400,13 @@ namespace DashBord_BL
 
 
             #region SheetsSysPara
-            dtresult = db_access.GetSheetsDataEps(Eps_Key, Patient_ID, HID);
+            dtresult = dal.GetSheetsDataEps(Eps_Key, Patient_ID, HID);
             foreach (DataRow dr in dtresult.Rows)
             {
                 if (SheetRes.Where(raad => raad.SheetType == dr["SheetType"].ToString() && raad.SheetCode == "0").Count() == 0)
                 {
                     Sheet SheetRecTT = factory.createSheet();
-                    SheetRecTT.User_Key = db_access.getUserId();
+                    SheetRecTT.User_Key = dal.getUserId();
                     SheetRecTT.SheetCode = "0";
                     // SheetRes.Add(SheetRec);
 
@@ -438,7 +446,7 @@ namespace DashBord_BL
                 SheetRec.PID = dr["Patient_id"].ToString();
                 SheetRec.SheetDescStatus = dr["InvordStatus"].ToString();//.Split("<br>".ToCharArray());
 
-                bool xxcc = db_access.IsEMRFavorites(SheetRec.SheetCode, "5", db_access.getUserId(), dtfvr);
+                bool xxcc = dal.IsEMRFavorites(SheetRec.SheetCode, "5", dal.getUserId(), dtfvr);
                 if (xxcc == true)
                 {
                     SheetRec.IsEMRFavorites = "1";
@@ -449,7 +457,7 @@ namespace DashBord_BL
                     SheetRec.IsEMRFavorites = "0";
                     SheetRec.IconEMRFavorites = "Images/Gen/star_grey.ico";
                 }
-                xxcc = db_access.IsEMRSignOff(SheetRec.SheetOrd_Key, "9", db_access.getUserId(), Patient_ID, dtsoff);
+                xxcc = dal.IsEMRSignOff(SheetRec.SheetOrd_Key, "9", dal.getUserId(), Patient_ID, dtsoff);
                 if (xxcc == true)
                 {
                     SheetRec.IsEMRSignOff = "1";
@@ -537,8 +545,8 @@ namespace DashBord_BL
             List<ClsDescStatus> res = new List<ClsDescStatus>();
             DataTable DsPallDt = null;
 
-            DashBord_DAL.PatDoc_DL db_access = new PatDoc_DL();
-            DsPallDt = db_access.GetPNotes(PID, User_ID, FromDate, ToDate);
+           // DashBord_DAL.PatDoc_DL db_access = new PatDoc_DL();
+            DsPallDt = dal.GetPNotes(PID, User_ID, FromDate, ToDate);
 
             foreach (DataRow dr in DsPallDt.Rows)
             {
@@ -644,9 +652,9 @@ namespace DashBord_BL
         //--GetDocNGrp BL
         public string GetDocNGrp(string PID)
         {
-            DashBord_DAL.PatDoc_DL noe = new PatDoc_DL();
+           // DashBord_DAL.PatDoc_DL noe = new PatDoc_DL();
             List<ClsDocNGroup> res = new List<ClsDocNGroup>();
-            DataTable DsDNG = noe.GetDocNoteGroup(PID);
+            DataTable DsDNG = dal.GetDocNoteGroup(PID);
             ClsDocNGroup g11 = new ClsDocNGroup();
             g11.Grp_key = "0";
             g11.Grp_desc = "All Group";
@@ -663,7 +671,7 @@ namespace DashBord_BL
 
         public string SetOrderSheetSysParam(string Keys, string PID, string Eps_Key, string User_Id, string isPrivateSheet)
         {
-            DashBord_DAL.PatPro_DL sheetsDl = new PatPro_DL();
+            DashBord_DAL.PatPro_DL sheetsDl = new PatPro_DL(df.getDal());
             string str1 = "";
             if (Keys.Trim() != "")
             {
@@ -685,8 +693,8 @@ namespace DashBord_BL
         public string SheetisPriavate(string HID)
         {
             string str = "";
-            DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
-            DataTable data = dl.SheetisPriavate(HID);
+          //  DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
+            DataTable data = dal.SheetisPriavate(HID);
             if (data.Rows.Count > 0)
                 str = data.Rows[0][0].ToString();
             str = "";
@@ -696,30 +704,30 @@ namespace DashBord_BL
         // has NO implementation at all
         public void GetWebServerIP()
         {
-            DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
+           // DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
         }
 
         public string getNoteCount(string Patient_ID, DateTime FromDate, DateTime ToDate, string U_id)
         {
-            DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
-            return dl.getNoteCount(Patient_ID, FromDate, ToDate, U_id);
+            //DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
+            return dal.getNoteCount(Patient_ID, FromDate, ToDate, U_id);
         }
 
         public string getSheetReportsDef(string HId)
         {
-            DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
-            return dl.getSheetReportsDef(HId);
+            //DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
+            return dal.getSheetReportsDef(HId);
         }
 
         public List<SheetsRep> getSheetReports(string HId)
         {
-            DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
+            //DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
             List<SheetsRep> sheetReports = new List<SheetsRep>();
-            string str = dl.getSheetReports(HId);
+            string str = dal.getSheetReports(HId);
             if (str == "")
                 str = "0";
 
-            DataTable data = dl.getSheetReportsBySysKey(str);
+            DataTable data = dal.getSheetReportsBySysKey(str);
             sheetReports.Add(new SheetsRep()
             {
                 id = "-444499",
@@ -744,16 +752,16 @@ namespace DashBord_BL
             List<SheetUI> list = new List<SheetUI>();
             SheetFactory factory = new SheetFactory();
             List<Sheet> source = new List<Sheet>();
-            DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
-            DataTable dtf1 = dl.EMRFavorites(dl.getUserId());
-            DataTable dtf2 = dl.EMRSignOff("9", dl.getUserId(), Patient_ID);
-            foreach (DataRow row in dl.GetSheetsDataByOrderKey(Patient_ID, OrderKey).Rows)
+           // DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
+            DataTable dtf1 = dal.EMRFavorites(dal.getUserId());
+            DataTable dtf2 = dal.EMRSignOff("9", dal.getUserId(), Patient_ID);
+            foreach (DataRow row in dal.GetSheetsDataByOrderKey(Patient_ID, OrderKey).Rows)
             {
                 DataRow dr = row;
                 if (source.Where<Sheet>((Func<Sheet, bool>)(raad => raad.SheetType == dr["SheetType"].ToString() && raad.SheetCode == "0")).Count<Sheet>() == 0)
                 {
                     Sheet sheet = factory.createSheet();
-                    sheet.User_Key = dl.getUserId();
+                    sheet.User_Key = dal.getUserId();
                     sheet.SheetCode = "0";
                     sheet.SheetDesc = dr["SheetType"].ToString();
                     sheet.SheetType = dr["SheetType"].ToString();
@@ -785,7 +793,7 @@ namespace DashBord_BL
                 sheet1.SheetClass = "SheetClassV " + dr["sheettype"].ToString();
                 sheet1.PID = dr["Patient_id"].ToString();
                 sheet1.SheetDescStatus = dr["InvordStatus"].ToString();
-                if (dl.IsEMRFavorites(sheet1.SheetCode, "5", dl.getUserId(), dtf1))
+                if (dal.IsEMRFavorites(sheet1.SheetCode, "5", dal.getUserId(), dtf1))
                 {
                     sheet1.IsEMRFavorites = "1";
                     sheet1.IconEMRFavorites = "Images/Gen/star_yellow.ico";
@@ -795,7 +803,7 @@ namespace DashBord_BL
                     sheet1.IsEMRFavorites = "0";
                     sheet1.IconEMRFavorites = "Images/Gen/star_grey.ico";
                 }
-                if (dl.IsEMRSignOff(sheet1.SheetOrd_Key, "9", dl.getUserId(), Patient_ID, dtf2))
+                if (dal.IsEMRSignOff(sheet1.SheetOrd_Key, "9", dal.getUserId(), Patient_ID, dtf2))
                 {
                     sheet1.IsEMRSignOff = "1";
                     sheet1.IconEMRSignOff = "Images/Gen/eye.png";
@@ -837,13 +845,13 @@ namespace DashBord_BL
                 else
                     sheet1.SheetStatus = SheetStatus.Recoreded;
             }
-            foreach (DataRow row in dl.GetTemplatesDataByOrderKey(Patient_ID, OrderKey).Rows)
+            foreach (DataRow row in dal.GetTemplatesDataByOrderKey(Patient_ID, OrderKey).Rows)
             {
                 DataRow dr = row;
                 if (source.Where<Sheet>((Func<Sheet, bool>)(raad => raad.SheetType == dr["Type"].ToString() && raad.SheetCode == "0")).Count<Sheet>() == 0)
                 {
                     Sheet sheet = factory.createSheet();
-                    sheet.User_Key = dl.getUserId();
+                    sheet.User_Key = dal.getUserId();
                     sheet.SheetCode = "0";
                     sheet.SheetDesc = dr["Type"].ToString();
                     sheet.SheetType = dr["Type"].ToString();
@@ -895,7 +903,7 @@ namespace DashBord_BL
                     sheet2.IsPrivate = "0";
                     sheet2.IconPrivate = "Images/Gen/Unlock.png";
                 }
-                if (dl.IsEMRFavorites(sheet2.SheetCode, "88", dl.getUserId(), dtf1))
+                if (dal.IsEMRFavorites(sheet2.SheetCode, "88", dal.getUserId(), dtf1))
                 {
                     sheet2.IsEMRFavorites = "1";
                     sheet2.IconEMRFavorites = "Images/Gen/star_yellow.ico";
@@ -959,8 +967,9 @@ namespace DashBord_BL
 
         public string getQuery(string query)
         {
-            DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
-            return dl.executeQuery(query);
+          //  DashBord_DAL.PatDoc_DL dl = new PatDoc_DL();
+            return dal.executeQuery(query);
         }
+       
     }
 }

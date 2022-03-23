@@ -48,6 +48,7 @@
     <Compile Include="Assessments.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ConstantsVariables.cs" />
+    <Compile Include="EMRLogic.cs" />
     <Compile Include="PatDoc_BL.cs" />
     <Compile Include="PatPro_BL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

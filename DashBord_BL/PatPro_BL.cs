@@ -11,163 +11,170 @@ namespace DashBord_BL
 
    public class PatPro_BL
     {
+        private DashBord_DAL.PatPro_DL dal;
+        private RepositoryDb<object> df;
 
+        public PatPro_BL()
+        {
+           // df = new RepositoryDb<object>();
+            dal = new DashBord_DAL.PatPro_DL(new RepositoryDb<object>().getDal());
+        }
         public string GetEMRAccessModule(string UserKey)
         {
             string Res = "";
             if (UserKey.Trim() == "")
             { return ""; }
 
-            DashBord_DAL.PatPro_DL EMRAcc = new DashBord_DAL.PatPro_DL();
-            EMRAcc.GetAccess(UserKey, false);
-            if (EMRAcc.LaborartoryVisible == true)
+          //  DashBord_DAL.PatPro_DL EMRAcc = new DashBord_DAL.PatPro_DL();
+            dal.GetAccess(UserKey, false);
+            if (dal.LaborartoryVisible == true)
             { Res += "lab,"; }
-            if (EMRAcc.RadiologyVisible == true)
+            if (dal.RadiologyVisible == true)
             { Res += "rad,"; }
-            if (EMRAcc.MedicationsVisible == true)
+            if (dal.MedicationsVisible == true)
             { Res += "med,"; }
-            if (EMRAcc.ProceduresVisible == true)
+            if (dal.ProceduresVisible == true)
             { Res += "proc,"; }
-            if (EMRAcc.MedicalSheetsVisible == true)
+            if (dal.MedicalSheetsVisible == true)
             { Res += "sht,"; }
-            if (EMRAcc.OperationsVisible == true)
+            if (dal.OperationsVisible == true)
             { Res += "opt,"; }
-            if (EMRAcc.DoctorNotesVisible == true)
+            if (dal.DoctorNotesVisible == true)
             { Res += "dnote,"; }
-            if (EMRAcc.ConsultationsVisible == true)
+            if (dal.ConsultationsVisible == true)
             { Res += "cons,"; }
-            if (EMRAcc.BloodBankVisible == true)
+            if (dal.BloodBankVisible == true)
             { Res += "bbank,"; }
-            if (EMRAcc.IVVisible == true)
+            if (dal.IVVisible == true)
             { Res += "ivs,"; }
-            if (EMRAcc.AssessmentVisible == true)
+            if (dal.AssessmentVisible == true)
             { Res += "Ass,"; }
-            if (EMRAcc.ChemotherabyVisible == true)
+            if (dal.ChemotherabyVisible == true)
             { Res += "Chemo,"; }
-            if (EMRAcc.ConsumablesVisible == true)
+            if (dal.ConsumablesVisible == true)
             { Res += "Consum,"; }
-            if (EMRAcc.DoctorNotesVisible == true)
+            if (dal.DoctorNotesVisible == true)
             { Res += "pnote,"; }
-            if (EMRAcc.VitalSignsVisible == true)
+            if (dal.VitalSignsVisible == true)
             { Res += "vs,"; }
 
-            if (EMRAcc.FaceSheetVisible == true)
+            if (dal.FaceSheetVisible == true)
             { Res += "FaceSheetVisible,"; }
-            if (EMRAcc.ClinicalHistoryVisible == true)
+            if (dal.ClinicalHistoryVisible == true)
             { Res += "ClinicalHistoryVisible,"; }
-            if (EMRAcc.DietVisible == true)
+            if (dal.DietVisible == true)
             { Res += "DietVisible,"; }
-            if (EMRAcc.PatientSummaryVisible == true)
+            if (dal.PatientSummaryVisible == true)
             { Res += "PatientSummaryVisible,"; }
-            if (EMRAcc.MedicalRecordVisible == true)
+            if (dal.MedicalRecordVisible == true)
             { Res += "MedicalRecordVisible,"; }
-            if (EMRAcc.ImmunizationVisible == true)
+            if (dal.ImmunizationVisible == true)
             { Res += "ImmunizationVisible,"; }
-            if (EMRAcc.DischargeOrderVisible == true)
+            if (dal.DischargeOrderVisible == true)
             { Res += "DischargeOrderVisible,"; }
-            if (EMRAcc.PatientAcuityVisible == true)
+            if (dal.PatientAcuityVisible == true)
             { Res += "PatientAcuityVisible,"; }
-            if (EMRAcc.TransfersVisible == true)
+            if (dal.TransfersVisible == true)
             { Res += "TransfersVisible,"; }
-            if (EMRAcc.FinanceVisible == true)
+            if (dal.FinanceVisible == true)
             { Res += "FinanceVisible,"; }
-            if (EMRAcc.CarePlanVisible == true)
+            if (dal.CarePlanVisible == true)
             { Res += "CarePlanVisible,"; }
-            if (EMRAcc.DoctorInstructionsVisible == true)
+            if (dal.DoctorInstructionsVisible == true)
             { Res += "DoctorInstructionsVisible,"; }
 
 
 
-            if (EMRAcc.PastMedicalHistoryVisible == true)
+            if (dal.PastMedicalHistoryVisible == true)
             { Res += "PastMedicalHistoryVisible,"; }
-            if (EMRAcc.PastSurgicalHistoryVisible == true)
+            if (dal.PastSurgicalHistoryVisible == true)
             { Res += "PastSurgicalHistoryVisible,"; }
-            if (EMRAcc.FamilyHistoryVisible == true)
+            if (dal.FamilyHistoryVisible == true)
             { Res += "FamilyHistoryVisible,"; }
-            if (EMRAcc.SocialHistoryVisible == true)
+            if (dal.SocialHistoryVisible == true)
             { Res += "SocialHistoryVisible,"; }
-            if (EMRAcc.HabitsVisible == true)
+            if (dal.HabitsVisible == true)
             { Res += "HabitsVisible,"; }
-            if (EMRAcc.RiskFactorsVisible == true)
+            if (dal.RiskFactorsVisible == true)
             { Res += "RiskFactorsVisible,"; }
-            if (EMRAcc.MedicationHistoryVisible == true)
+            if (dal.MedicationHistoryVisible == true)
             { Res += "MedicationHistoryVisible,"; }
-            if (EMRAcc.AllergiesVisible == true)
+            if (dal.AllergiesVisible == true)
             { Res += "AllergiesVisible,"; }
-            if (EMRAcc.FoodorNonDrugAllergiesVisible == true)
+            if (dal.FoodorNonDrugAllergiesVisible == true)
             { Res += "FoodorNonDrugAllergiesVisible,"; }
-            if (EMRAcc.ConsiderationsVisible == true)
+            if (dal.ConsiderationsVisible == true)
             { Res += "ConsiderationsVisible,"; }
-            if (EMRAcc.CoMorbiditiesVisible == true)
+            if (dal.CoMorbiditiesVisible == true)
             { Res += "CoMorbiditiesVisible,"; }
 
 
 
 
-            if (EMRAcc.ClinicalHistoryEnable == true)
+            if (dal.ClinicalHistoryEnable == true)
             { Res += "ClinicalHistoryEnable,"; }
-            if (EMRAcc.DietEnable == true)
+            if (dal.DietEnable == true)
             { Res += "DietEnable,"; }
-            if (EMRAcc.PatientSummaryEnable == true)
+            if (dal.PatientSummaryEnable == true)
             { Res += "PatientSummaryEnable,"; }
-            if (EMRAcc.MedicalRecordEnable == true)
+            if (dal.MedicalRecordEnable == true)
             { Res += "MedicalRecordEnable,"; }
-            if (EMRAcc.ImmunizationEnable == true)
+            if (dal.ImmunizationEnable == true)
             { Res += "ImmunizationEnable,"; }
-            if (EMRAcc.DischargeOrderEnable == true)
+            if (dal.DischargeOrderEnable == true)
             { Res += "DischargeOrderEnable,"; }
-            if (EMRAcc.PatientAcuityEnable == true)
+            if (dal.PatientAcuityEnable == true)
             { Res += "PatientAcuityEnable,"; }
-            if (EMRAcc.TransfersEnable == true)
+            if (dal.TransfersEnable == true)
             { Res += "TransfersEnable,"; }
-            if (EMRAcc.FinanceEnable == true)
+            if (dal.FinanceEnable == true)
             { Res += "FinanceEnable,"; }
-            if (EMRAcc.PatientStatusSetupEnable == true)
+            if (dal.PatientStatusSetupEnable == true)
             { Res += "PatientStatusSetupEnable,"; }
-            if (EMRAcc.DiagnosisEnable == true)
+            if (dal.DiagnosisEnable == true)
             { Res += "DiagnosisEnable,"; }
-            if (EMRAcc.MRPEnable == true)
+            if (dal.MRPEnable == true)
             { Res += "MRPEnable,"; }
-            if (EMRAcc.WTandHTEnable == true)
+            if (dal.WTandHTEnable == true)
             { Res += "WTandHTEnable,"; }
-            if (EMRAcc.LocationEnable == true)
+            if (dal.LocationEnable == true)
             { Res += "LocationEnable,"; }
-            if (EMRAcc.ClinicalSheetEnable == true)
+            if (dal.ClinicalSheetEnable == true)
             { Res += "ClinicalSheetEnable,"; }
 
 
 
 
             //read only
-            if (EMRAcc.Laborartory == true)
+            if (dal.Laborartory == true)
             { Res += "labRO,"; }
-            if (EMRAcc.Radiology == true)
+            if (dal.Radiology == true)
             { Res += "radRO,"; }
-            if (EMRAcc.Medications == true)
+            if (dal.Medications == true)
             { Res += "medRO,"; }
-            if (EMRAcc.Procedures == true)
+            if (dal.Procedures == true)
             { Res += "procRO,"; }
-            if (EMRAcc.MedicalSheets == true)
+            if (dal.MedicalSheets == true)
             { Res += "shtRO,"; }
-            if (EMRAcc.Operations == true)
+            if (dal.Operations == true)
             { Res += "optRO,"; }
-            if (EMRAcc.DoctorNotes == true)
+            if (dal.DoctorNotes == true)
             { Res += "dnoteRO,"; }
-            if (EMRAcc.Consultations == true)
+            if (dal.Consultations == true)
             { Res += "consRO,"; }
-            if (EMRAcc.BloodBank == true)
+            if (dal.BloodBank == true)
             { Res += "bbankRO,"; }
-            if (EMRAcc.IV == true)
+            if (dal.IV == true)
             { Res += "ivsRO,"; }
-            if (EMRAcc.Assessment == true)
+            if (dal.Assessment == true)
             { Res += "AssRO,"; }
-            if (EMRAcc.Chemotheraby == true)
+            if (dal.Chemotheraby == true)
             { Res += "ChemoRO,"; }
-            if (EMRAcc.Consumables == true)
+            if (dal.Consumables == true)
             { Res += "ConsumRO,"; }
-            if (EMRAcc.DoctorNotes == true)
+            if (dal.DoctorNotes == true)
             { Res += "pnoteRO,"; }
-            if (EMRAcc.VitalSigns == true)
+            if (dal.VitalSigns == true)
             { Res += "vsRO,"; }
             return Res;
         }
@@ -175,7 +182,7 @@ namespace DashBord_BL
         public string SetOrderSheet(string Keys, string PID, string Eps_Key, string User_Id)
         {
             string res = "";
-            DashBord_DAL.PatPro_DL sh = new PatPro_DL();
+         //   DashBord_DAL.PatPro_DL sh = new PatPro_DL();
             //SheetsDL sh = new SheetsDL();
             if (Keys.Trim() != "")
             {
@@ -188,15 +195,15 @@ namespace DashBord_BL
                         string[] yy = ss.Split('|');
                         if (yy.Length == 1)
                         {
-                            res += sh.SetOrderSheet(yy[0], PID, Eps_Key, User_Id) + "^";
+                            res += dal.SetOrderSheet(yy[0], PID, Eps_Key, User_Id) + "^";
 
                         }
                         else
                         {
                             if (yy[1].ToString() == "1")
-                                res += sh.SetOrderSheet(yy[0], PID, Eps_Key, User_Id) + "^";
+                                res += dal.SetOrderSheet(yy[0], PID, Eps_Key, User_Id) + "^";
                             else
-                                res += sh.SetOrderTemplate(yy[0], PID, Eps_Key, User_Id) + "^";
+                                res += dal.SetOrderTemplate(yy[0], PID, Eps_Key, User_Id) + "^";
                         }
 
                     }
@@ -214,9 +221,9 @@ namespace DashBord_BL
             if (HID.Trim() == "")
             { return JsonConvert.SerializeObject(new List<ActiveProblems>()); }
             List<ActiveProblems> ActiveProRes = new List<ActiveProblems>();
-            DashBord_DAL.PatPro_DL ActivePro = new DashBord_DAL.PatPro_DL();
+           // DashBord_DAL.PatPro_DL ActivePro = new DashBord_DAL.PatPro_DL();
             DataTable dtresult = null;
-            dtresult = ActivePro.GetActiveProblems(Patient_ID, Eps_Key, HID, Type);
+            dtresult = dal.GetActiveProblems(Patient_ID, Eps_Key, HID, Type);
             foreach (DataRow dr in dtresult.Rows)
             {
                 ActiveProblems ActProRes = null;
@@ -308,10 +315,10 @@ namespace DashBord_BL
         {
             List<DashBord_DAL.ClinicalInfo> CInfoRes = new List<ClinicalInfo>();
 
-            DashBord_DAL.PatPro_DL CInfo = new DashBord_DAL.PatPro_DL();
+           // DashBord_DAL.PatPro_DL CInfo = new DashBord_DAL.PatPro_DL();
             DataTable dtresult = null;
             //User_key = DashBord_DAL.PatPro_DL.getUserId
-            dtresult = CInfo.GetCliniclInfo(Patient_ID, HID, Eps_key);
+            dtresult = dal.GetCliniclInfo(Patient_ID, HID, Eps_key);
             foreach (DataRow dr in dtresult.Rows)
             {
                 ClinicalInfo CInfoRec = null;
@@ -374,7 +381,7 @@ namespace DashBord_BL
 
             }
 
-            dtresult = CInfo.GetDietInfo(Patient_ID, Eps_key);
+            dtresult = dal.GetDietInfo(Patient_ID, Eps_key);
             foreach (DataRow dr in dtresult.Rows)
             {
                 ClinicalInfo CInfoRec = null;
@@ -406,11 +413,11 @@ namespace DashBord_BL
             int Eps_type=0;
 
             string Oreg_Key = "";
-            DashBord_DAL.PatPro_DL gen = new DashBord_DAL.PatPro_DL();
+            //DashBord_DAL.PatPro_DL gen = new DashBord_DAL.PatPro_DL();
 
             List<EpsItem> res = new List<EpsItem>();
-            DataTable DsDt = gen.GetEpisodeForInPatient(EpsKey);
-            gen.FillDatatableByEps(EpsKey);
+            DataTable DsDt = dal.GetEpisodeForInPatient(EpsKey);
+            dal.FillDatatableByEps(EpsKey);
             //EpsItem tt2 = new EpsItem();
             //tt2.Eps_key = "WXWX";
             //#region "OutPatient"
@@ -586,10 +593,10 @@ namespace DashBord_BL
                     //GeneralDL gen = new GeneralDL();
                     Eps_type = 1;
 
-                    string info = gen.GetInPatLocation(tt.Eps_key);
+                    string info = dal.GetInPatLocation(tt.Eps_key);
 
 
-                    DataTable dt = gen.getDiagnosis(EpsKey);
+                    DataTable dt = dal.getDiagnosis(EpsKey);
                     DataRow[] drsss = dt.Select("episod_key = " + tt.Eps_key);
                     string Html_Diagnosis = " <br> ";
                     foreach (DataRow dr in drsss)
@@ -609,17 +616,17 @@ namespace DashBord_BL
                             Html_Diagnosis += "- " + dr["code"].ToString() + ":" + dr["description"].ToString().Replace("'", "") + "  <strong>  (" + cxc + ") </strong>  <br> ";
                         }
                     }
-                    if (gen.getInPatMRPKey(EpsKey)== gen.getUserId() )
+                    if (dal.getInPatMRPKey(EpsKey)== dal.getUserId() )
                     {
                         tt.className = "orange";
                     }
                     tt.content = "   <img src='Images/Gen/adm.png' width='15'  /> <span >Inpatient(From " + tt.FromDate + " To " + tt.ToDate + ")</span>  " + cxccc +
-                        "  <br>  " + gen.getFinancial_type(tt.PID) + " <br>  " + gen.getInPatSpec(tt.PID) + " - " + gen.getInPatMRPKey(EpsKey) + "  <br> " + gen.getInPatNote() + " " + info + "" + Html_Diagnosis + "'  ";
+                        "  <br>  " + dal.getFinancial_type(tt.PID) + " <br>  " + dal.getInPatSpec(tt.PID) + " - " + dal.getInPatMRPKey(EpsKey) + "  <br> " + dal.getInPatNote() + " " + info + "" + Html_Diagnosis + "'  ";
                     // tt.group = "<div style='cursor: POINTER;' id='DivTimeLineAdmissions'><img src='Images/Gen/adm.png' width='15'  /> <span>Admissions</span></div>";
                 }
                 else if (Dr["pat_episode_typ"].ToString() == "2")
                 {
-                    DataRow Drvv = gen.GetEpisodeForOutPatient(EpsKey).Rows[0];
+                    DataRow Drvv = dal.GetEpisodeForOutPatient(EpsKey).Rows[0];
 
                     if (Drvv["status"].ToString() == "2")
                     {
@@ -700,15 +707,15 @@ namespace DashBord_BL
                             // info = "<strong>Status: </strong> Not Started";
                             // Html_Diagnosis = " <br>  <strong> Diagnosis : </strong> no Data ";
                             Oreg_Key = Drvv["oreg_Key"].ToString();
-                            info = gen.GetInPatLocation("0");
+                            info = dal.GetInPatLocation("0");
                         }
                         else
                         {
                             Eps_type = 2;
                             Oreg_Key = Drvv["oreg_Key"].ToString();
-                            info = gen.GetInPatLocation(tt.Eps_key);
+                            info = dal.GetInPatLocation(tt.Eps_key);
                             Html_Diagnosis = " <br> ";
-                            DataTable dt_Diagn = gen.getDiagnosis(tt.Eps_key);
+                            DataTable dt_Diagn = dal.getDiagnosis(tt.Eps_key);
                             DataRow[] drsss = dt_Diagn.Select("episod_key = " + tt.Eps_key);
                             foreach (DataRow dr in drsss)
                             {
@@ -731,14 +738,14 @@ namespace DashBord_BL
 
                         }
                         
-                        if (gen.getInPatMRPKey(EpsKey) == gen.getUserId())
+                        if (dal.getInPatMRPKey(EpsKey) == dal.getUserId())
                         {
                             tt.className = "orange";
                         }
                     }
                     string vvvdata = Drvv["regtime"].ToString() != "" ? String.Format("{0:dd-MMM-yy}", Convert.ToDateTime(Drvv["regtime"].ToString())) : "";
                     tt.content = "   <img src='Images/Gen/clinic.png'  width='15'  /> <span >Outpatient(From " + tt.FromDate + " To " + tt.ToDate + ") " + cxccc + "</span>      " +
-                            " <br>  " + gen.getFinancial_type(tt.PID) + " <br>  " + gen.getInPatSpec(tt.PID) + " - " + gen.getInPatMRPKey(EpsKey) + "  <br> " + gen.getInPatNote() + " " + info + "" + Html_Diagnosis + "' ";
+                            " <br>  " + dal.getFinancial_type(tt.PID) + " <br>  " + dal.getInPatSpec(tt.PID) + " - " + dal.getInPatMRPKey(EpsKey) + "  <br> " + dal.getInPatNote() + " " + info + "" + Html_Diagnosis + "' ";
                     tt.group = "<div style='cursor: POINTER;' id='DivTimeLineVisits'><img src='Images/Gen/clinic.png' width='15'  /> <span>Visits</span></div>";
                 }
                 else if (Dr["pat_episode_typ"].ToString() == "9")
@@ -764,8 +771,8 @@ namespace DashBord_BL
         {
             string isOrderEpisode = "";
             string str = "";
-            DashBord_DAL.PatPro_DL pp = new PatPro_DL();
-            DataTable dt = pp.GetIsOrderEpisode(Eps_Key);
+         //   DashBord_DAL.PatPro_DL pp = new PatPro_DL();
+            DataTable dt = dal.GetIsOrderEpisode(Eps_Key);
             if (dt.Rows.Count > 0)
                 str = dt.Rows[0]["ExServices"].ToString();
             if (str == "9")
@@ -780,13 +787,13 @@ namespace DashBord_BL
             {
                 return "";
             }
-            DashBord_DAL.PatPro_DL obj = new PatPro_DL();
-            return obj.GetEnableOrderSets(HID);
+        //    DashBord_DAL.PatPro_DL obj = new PatPro_DL();
+            return dal.GetEnableOrderSets(HID);
         }
 
         public string GetUserDefScreen(string User_Id)
         {
-            DashBord_DAL.PatPro_DL dal = new PatPro_DL();
+            //DashBord_DAL.PatPro_DL dal = new PatPro_DL();
             DataTable dt = dal.GetUserDefScreen(User_Id);
             string userDefScreen = "";
             if (dt.Rows.Count > 0)
@@ -795,10 +802,10 @@ namespace DashBord_BL
         }
 
         //  this fun return Eps_Status 
-        public string Eps_Status(string Eps_Key) => new DashBord_DAL.PatPro_DL().Eps_Status(Eps_Key);
+        public string Eps_Status(string Eps_Key) => dal.Eps_Status(Eps_Key);
 
         //  this fun return GetGender 
-        public string GetGender(string PID) => new DashBord_DAL.PatPro_DL().GetGender(PID);
+        public string GetGender(string PID) => dal.GetGender(PID);
 
 
 
@@ -808,9 +815,9 @@ namespace DashBord_BL
         DateTime FromDate,
         DateTime ToDate)
         {
-            DashBord_DAL.PatPro_DL assessmentsDl = new PatPro_DL();
+           // DashBord_DAL.PatPro_DL assessmentsDl = new PatPro_DL();
             List<Assessments> assessmentsData = new List<Assessments>();
-            foreach (DataRow row in (InternalDataCollectionBase)assessmentsDl.GetAssessmentsData(Patient_ID, FromDate, ToDate).Rows)
+            foreach (DataRow row in dal.GetAssessmentsData(Patient_ID, FromDate, ToDate).Rows)
             {
                 Assessments assessments = new Assessments();
                 assessments.EpisodeKey = row["EpisodeKey"].ToString();
@@ -841,10 +848,10 @@ namespace DashBord_BL
         }
 
 
-        public static string GetLastVisit(string PID, string Eps_key)
+        public  string GetLastVisit(string PID, string Eps_key)
         {
             string lastVisit = "";
-            DataTable dt = DashBord_DAL.PatPro_DL.GetLastVisit(PID, Eps_key);
+            DataTable dt = dal.GetLastVisit(PID, Eps_key);
             foreach (DataRow row in (InternalDataCollectionBase)dt.Rows)
             {
                 lastVisit = string.Format("{0:yyyy-MM-dd}", (object)Convert.ToDateTime(dt.Rows[0]["start_date"].ToString()));

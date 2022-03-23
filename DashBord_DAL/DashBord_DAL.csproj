@@ -62,7 +62,9 @@
     <Compile Include="ClsDocNGroup.cs" />
     <Compile Include="ClsDocNUser.cs" />
     <Compile Include="DrugAdminInfo.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="IT_Sheet.cs" />
+    <Compile Include="MedcaDalDB.cs" />
     <Compile Include="PatDoc_DL.cs" />
     <Compile Include="PatPro_DL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

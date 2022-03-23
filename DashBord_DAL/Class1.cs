@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace DashBord_DAL
 {
-    public class Class1
+    public class RepositoryDb<TEntity> where TEntity : class
     {
-        public Class1()
+        MedicaDAL.DBInteraction df;
+        public RepositoryDb()
         {
-
+            df = new MedicaDAL.DBInteraction(true);
         }
+        public virtual MedicaDAL.DBInteraction getdb()
+        {
+            return df;
+        }
+        public MedcaDalDB  getDal()
+        {
+            return new MedcaDalDB();
+        }
+
     }
 }

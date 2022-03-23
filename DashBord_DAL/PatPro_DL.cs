@@ -119,26 +119,24 @@ namespace DashBord_DAL
 
 
 
-        private MedicaDAL.DBInteraction dbcon;
+        //private MedicaDAL.DBInteraction dbcon.getdb();
 
         //public DateTime Utilities { get; private set; }
-
-        public PatPro_DL()
+      //  private RepositoryDb<object> dbcon;
+        private IRepository dbcon;
+        public PatPro_DL(IRepository _dbcon)
         {
-            dbcon = new MedicaDAL.DBInteraction(true);
+            dbcon = _dbcon;
         }
-
-        //public bool VitalSignsVisible { get; private set; }
-
 
         public string getUserId()
         {
-            return dbcon.UserKey;
+            return dbcon.UserKey();
         }
 
         public void GetAccess(string UserKey, bool isReadonly)
         {
-
+          //  MedicaDAL.DBInteraction dbcons = new DBInteraction(true);
             VitalSignsVisible = true;
             LaborartoryVisible = true;
             RadiologyVisible = true;
@@ -510,7 +508,7 @@ namespace DashBord_DAL
         public System.Data.DataTable GetCliniclInfo(string Patt_ID, string P_HospitalID, string Eps_key)
         {
             // 924,935 
-            string User_key = dbcon.UserKey;
+            string User_key = dbcon.UserKey();
             var SelectString = "exec GetClinicalInfo '" + Patt_ID + "','" + P_HospitalID + "','" + Eps_key + "'";
             return dbcon.GetData(SelectString);
 
@@ -920,7 +918,7 @@ namespace DashBord_DAL
         public DataTable GetActiveProblems(string Pat_Id, string Eps_key, string P_HospitalID, string Type)
         {
             // Eps_key = "0";
-            //dbcon = new MedicaDAL.DBInteraction(true);
+            //dbcon.getdb() = new MedicaDAL.DBInteraction(true);
             //if (Eps_key == "0")
             //{
 
@@ -1274,7 +1272,7 @@ namespace DashBord_DAL
 
         public DataTable GetUserDefScreen(string User_Id)
         {
-            dbcon = new DBInteraction(true);
+           // dbcon.getdb() = new DBInteraction(true);
             var SelectString = "Select ScreenDefName from UserDefWebScreen WITH (nolock)  where (pat_id is null or pat_id = '') and  staff_key = " + User_Id;
             DataTable data = dbcon.GetData(SelectString);
             return data;
@@ -1284,7 +1282,7 @@ namespace DashBord_DAL
 
         public string Eps_Status(string Eps_Key)
         {
-            dbcon = new DBInteraction(true);
+            //dbcon.getdb() = new DBInteraction(true);
 
             var SelectString = "Select Episode_type from Episode  WITH (nolock)  where  Episod_key = " + Eps_Key;
             DataTable dt = dbcon.GetData(SelectString);
@@ -1294,7 +1292,7 @@ namespace DashBord_DAL
         public string GetGender(string PID)
         {
 
-            dbcon = new DBInteraction(true);
+          //  dbcon.getdb() = new DBInteraction(true);
             DataTable dt = dbcon.GetData("select patient_sex from patient where patient_id = '" + PID + "'");
             return dt.Rows.Count == 0 ? "" : dt.Rows[0][0].ToString();
 
@@ -1319,16 +1317,16 @@ namespace DashBord_DAL
                 Utilities.FormatDateClr(ToDate)) + " order by DateTimeStamp desc";
             return this.dbcon.GetData(SelectString);
         }
-        public static DataTable GetLastVisit(string PID, string Eps_key)
+        public  DataTable GetLastVisit(string PID, string Eps_key)
         {
-            DBInteraction dbInteraction = new DBInteraction(true);
+          //  DBInteraction dbInteraction = new DBInteraction(true);
             DataTable data2 = new DataTable();
             string str1 = "select start_date,pat_episode_typ  from Episode where patient_id = '" + PID + "' and episod_key = " + Eps_key;
-            DataTable data1 = dbInteraction.GetData(str1);
+            DataTable data1 = dbcon.GetData(str1);
             if (data1.Rows.Count > 0 && data1.Rows[0]["pat_episode_typ"].ToString() == "2")
             {
                 string str2 = "select top 2 start_date,pat_episode_typ  from Episode where patient_id = '" + PID + "' and pat_episode_typ = 2 order by  episod_key desc";
-                data2 = dbInteraction.GetData(str2);
+                data2 = dbcon.GetData(str2);
             }
             return data2;
         }

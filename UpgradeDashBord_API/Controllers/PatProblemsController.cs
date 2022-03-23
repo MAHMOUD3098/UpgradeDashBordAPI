@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
@@ -11,19 +12,24 @@ namespace UpgradeDashBord_API.Controllers
 {
     public class PatProblemsController : ApiController
     {
-        public string GetEMRAccessModule(int UserKey)
+        private DashBord_BL.EMRLogic<object> Logcs;
+        public PatProblemsController()
+        {
+            Logcs = new DashBord_BL.EMRLogic<object>(2);
+        }
+        public async Task<string> GetEMRAccessModule(int UserKey)
         {
             try
             {
                 string rettaksemr = "";
-                DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
-               // rettaksemr = await Task.Run(() =>Logc.GetEMRAccessModule(UserKey.ToString()));
-                //Task<string> sd = new Task<string>(()=>Logc.GetEMRAccessModule(UserKey.ToString()));
-                //sd.Start();
-                //await sd;
-                return Logc.GetEMRAccessModule(UserKey.ToString());
+              
+                await Task.Run(() => {
+             
+                    rettaksemr = Logcs.GetPatPro_BLL().GetEMRAccessModule(UserKey.ToString());
+                });
+                return rettaksemr;
             }
-            catch(Exception er)
+            catch (Exception er)
             {
                 return er.ToString();
             }
@@ -35,10 +41,10 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
+               // DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
 
 
-                return Logc.SetOrderSheet(Keys, PID, Eps_Key.ToString(), User_Id.ToString());
+                return Logcs.GetPatPro_BLL().SetOrderSheet(Keys, PID, Eps_Key.ToString(), User_Id.ToString());
             }
             catch(Exception er)
             {
@@ -51,9 +57,9 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
+               // DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
 
-                return Logc.GetActiveProblems(Patient_ID, Eps_key.ToString(), HID.ToString(), intType.ToString());
+                return Logcs.GetPatPro_BLL().GetActiveProblems(Patient_ID, Eps_key.ToString(), HID.ToString(), intType.ToString());
             }
             catch(Exception er)
             {
@@ -66,9 +72,9 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
+               // DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
 
-                return Logc.GetCInfoData(Patient_ID, Eps_Key.ToString(), HID.ToString());
+                return Logcs.GetPatPro_BLL().GetCInfoData(Patient_ID, Eps_Key.ToString(), HID.ToString());
             }
             catch(Exception er)
             {
@@ -77,24 +83,13 @@ namespace UpgradeDashBord_API.Controllers
         }
 
 
-
-
-
-
-
-        // new api 
-
-
-
-
-
         [HttpGet]
         public string GetIsOrderEpisode(string Eps_Key)
         {
             try
             {
 
-                return new DashBord_BL.PatPro_BL().GetIsOrderEpisode(Eps_Key);
+                return Logcs.GetPatPro_BLL().GetIsOrderEpisode(Eps_Key);
             }
             catch (Exception er)
             {
@@ -110,8 +105,8 @@ namespace UpgradeDashBord_API.Controllers
 
             try
             {
-                DashBord_BL.PatPro_BL objBus = new DashBord_BL.PatPro_BL();
-                return objBus.GetEnableOrderSets(HID);
+               // DashBord_BL.PatPro_BL objBus = new DashBord_BL.PatPro_BL();
+                return Logcs.GetPatPro_BLL().GetEnableOrderSets(HID);
             }
             catch (Exception er)
             {
@@ -125,8 +120,8 @@ namespace UpgradeDashBord_API.Controllers
             try
             {
                 // find problem api 2 pramaters  and implement need  1 pramaters
-                DashBord_BL.PatPro_BL ppb = new DashBord_BL.PatPro_BL();
-                return ppb.GetUserDefScreen(User_Id);
+                //DashBord_BL.PatPro_BL ppb = new DashBord_BL.PatPro_BL();
+                return Logcs.GetPatPro_BLL().GetUserDefScreen(User_Id);
             }
             catch (Exception er)
             {
@@ -139,8 +134,8 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatPro_BL esb = new DashBord_BL.PatPro_BL();
-                return esb.Eps_Status(Eps_Key);
+                //DashBord_BL.PatPro_BL esb = new DashBord_BL.PatPro_BL();
+                return Logcs.GetPatPro_BLL().Eps_Status(Eps_Key);
             }
             catch (Exception er)
             {
@@ -152,8 +147,8 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                DashBord_BL.PatPro_BL esb = new DashBord_BL.PatPro_BL();
-                return esb.GetGender(PID);
+              //  DashBord_BL.PatPro_BL esb = new DashBord_BL.PatPro_BL();
+                return Logcs.GetPatPro_BLL().GetGender(PID);
             }
             catch (Exception er)
             {
@@ -163,15 +158,24 @@ namespace UpgradeDashBord_API.Controllers
 
 
 
-        public dynamic GetAssessmentsData(
+        public async Task<dynamic> GetAssessmentsData(
         string Patient_ID,
         DateTime FromDate,
         DateTime ToDate)
         {
             try
             {
-                DashBord_BL.PatPro_BL gab = new DashBord_BL.PatPro_BL();
-                return gab.GetAssessmentsData(Patient_ID, FromDate, ToDate);
+               // DashBord_BL.PatPro_BL gab = new DashBord_BL.PatPro_BL();
+                List<DashBord_BL.Assessments> rettaksemr = new List<DashBord_BL.Assessments>();
+                await Task.Run(() => {
+
+                    rettaksemr = Logcs.GetPatPro_BLL().GetAssessmentsData(Patient_ID, FromDate, ToDate);
+                });
+                if (rettaksemr.Count == 0)
+                {
+                    return "";
+                }
+                return rettaksemr;
             }
             catch (Exception er)
             {
@@ -188,7 +192,7 @@ namespace UpgradeDashBord_API.Controllers
         {
             try
             {
-                return DashBord_BL.PatPro_BL.GetLastVisit(PID, Eps_key);
+                return Logcs.GetPatPro_BLL().GetLastVisit(PID, Eps_key);
             }
             catch (Exception er)
             {
