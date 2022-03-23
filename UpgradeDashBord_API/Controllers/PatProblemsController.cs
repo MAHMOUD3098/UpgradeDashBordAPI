@@ -37,14 +37,14 @@ namespace UpgradeDashBord_API.Controllers
       
 
         [HttpGet]
-        public string SetOrderSheet(string Keys, string PID  ,int Eps_Key , int User_Id  ,int isprivatesheet )
+        public async Task<string> SetOrderSheet(string Keys, string PID  ,int Eps_Key , int User_Id  ,int isprivatesheet )
         {
             try
             {
-               // DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
+                // DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
 
-
-                return Logcs.GetPatPro_BLL().SetOrderSheet(Keys, PID, Eps_Key.ToString(), User_Id.ToString());
+                return await Task.Run(() => Logcs.GetPatPro_BLL().SetOrderSheet(Keys, PID, Eps_Key.ToString(), User_Id.ToString()));
+                 
             }
             catch(Exception er)
             {
@@ -53,13 +53,13 @@ namespace UpgradeDashBord_API.Controllers
         }
 
         [HttpGet]
-        public string GetActiveProblemsProcessed(string Patient_ID ,int Eps_key  , int HID  , int intType)
+        public async Task<string> GetActiveProblemsProcessed(string Patient_ID ,int Eps_key  , int HID  , int intType)
         {
             try
             {
                // DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
 
-                return Logcs.GetPatPro_BLL().GetActiveProblems(Patient_ID, Eps_key.ToString(), HID.ToString(), intType.ToString());
+                return await Task.Run(() => Logcs.GetPatPro_BLL().GetActiveProblems(Patient_ID, Eps_key.ToString(), HID.ToString(), intType.ToString()));
             }
             catch(Exception er)
             {
@@ -68,13 +68,13 @@ namespace UpgradeDashBord_API.Controllers
         }
 
         [HttpGet]
-        public string GetCInfoResults(string Patient_ID, int Eps_Key, int User_ID, int HID)
+        public async Task<string> GetCInfoResults(string Patient_ID, int Eps_Key, int User_ID, int HID)
         {
             try
             {
                // DashBord_BL.PatPro_BL Logc = new DashBord_BL.PatPro_BL();
 
-                return Logcs.GetPatPro_BLL().GetCInfoData(Patient_ID, Eps_Key.ToString(), HID.ToString());
+                return await Task.Run(() => Logcs.GetPatPro_BLL().GetCInfoData(Patient_ID, Eps_Key.ToString(), HID.ToString()));
             }
             catch(Exception er)
             {
@@ -84,12 +84,12 @@ namespace UpgradeDashBord_API.Controllers
 
 
         [HttpGet]
-        public string GetIsOrderEpisode(string Eps_Key)
+        public async Task<string> GetIsOrderEpisode(string Eps_Key)
         {
             try
             {
 
-                return Logcs.GetPatPro_BLL().GetIsOrderEpisode(Eps_Key);
+                return await Task.Run(() => Logcs.GetPatPro_BLL().GetIsOrderEpisode(Eps_Key));
             }
             catch (Exception er)
             {
@@ -100,13 +100,13 @@ namespace UpgradeDashBord_API.Controllers
 
 
 
-        public string GetEnableOrderSets(string HID)
+        public async Task<string> GetEnableOrderSets(string HID)
         {
 
             try
             {
                // DashBord_BL.PatPro_BL objBus = new DashBord_BL.PatPro_BL();
-                return Logcs.GetPatPro_BLL().GetEnableOrderSets(HID);
+                return await Task.Run(() => Logcs.GetPatPro_BLL().GetEnableOrderSets(HID));
             }
             catch (Exception er)
             {
@@ -115,13 +115,13 @@ namespace UpgradeDashBord_API.Controllers
         }
 
         [HttpGet]
-        public string GetUserDefScreen(string User_Id, string PID)
+        public async Task<string> GetUserDefScreen(string User_Id, string PID)
         {
             try
             {
                 // find problem api 2 pramaters  and implement need  1 pramaters
                 //DashBord_BL.PatPro_BL ppb = new DashBord_BL.PatPro_BL();
-                return Logcs.GetPatPro_BLL().GetUserDefScreen(User_Id);
+                return await Task.Run(() => Logcs.GetPatPro_BLL().GetUserDefScreen(User_Id));
             }
             catch (Exception er)
             {
@@ -130,12 +130,12 @@ namespace UpgradeDashBord_API.Controllers
         }
 
         [HttpGet]
-        public string Eps_Status(string Eps_Key)
+        public async Task<string> Eps_Status(string Eps_Key)
         {
             try
             {
                 //DashBord_BL.PatPro_BL esb = new DashBord_BL.PatPro_BL();
-                return Logcs.GetPatPro_BLL().Eps_Status(Eps_Key);
+                return await Task.Run(() => Logcs.GetPatPro_BLL().Eps_Status(Eps_Key));
             }
             catch (Exception er)
             {
@@ -143,12 +143,12 @@ namespace UpgradeDashBord_API.Controllers
             }
         }
 
-        public string GetGender(string PID)
+        public async Task<string> GetGender(string PID)
         {
             try
             {
               //  DashBord_BL.PatPro_BL esb = new DashBord_BL.PatPro_BL();
-                return Logcs.GetPatPro_BLL().GetGender(PID);
+                return await Task.Run(() => Logcs.GetPatPro_BLL().GetGender(PID));
             }
             catch (Exception er)
             {
@@ -171,10 +171,10 @@ namespace UpgradeDashBord_API.Controllers
 
                     rettaksemr = Logcs.GetPatPro_BLL().GetAssessmentsData(Patient_ID, FromDate, ToDate);
                 });
-                if (rettaksemr.Count == 0)
-                {
-                    return "";
-                }
+                //if (rettaksemr.Count == 0)
+                //{
+                //    return "";
+                //}
                 return rettaksemr;
             }
             catch (Exception er)
@@ -188,11 +188,11 @@ namespace UpgradeDashBord_API.Controllers
 
 
 
-        public string GetLastVisit(string PID, string Eps_key)
+        public async Task<string> GetLastVisit(string PID, string Eps_key)
         {
             try
             {
-                return Logcs.GetPatPro_BLL().GetLastVisit(PID, Eps_key);
+                return  await Task.Run(() => Logcs.GetPatPro_BLL().GetLastVisit(PID, Eps_key));
             }
             catch (Exception er)
             {

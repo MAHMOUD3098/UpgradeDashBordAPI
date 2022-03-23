@@ -21,20 +21,20 @@ namespace DashBord_BL
             df = new RepositoryDb<object>();
             dal = new DashBord_DAL.PatDoc_DL(df.getDal());
         }
-        public string GetDocsForPat(string PID)
+        public List<Staff> GetDocsForPat(string PID)
         {
             
-            List<DashBord_DAL.Staff> docs = new List<DashBord_DAL.Staff>();
+            List<Staff> docs = new List<Staff>();
             DataTable DsDt = dal.GetDocsForPat(PID);
             foreach (DataRow Dr in DsDt.Rows)
             {
-                DashBord_DAL.Staff dd = new DashBord_DAL.Staff();
+             Staff dd = new Staff();
                 dd.Staff_key = Dr["staff_key"].ToString();
                 dd.Staff_Name = Dr["Staff_name"].ToString();
                 dd.Staff_Icon = "Images/Gen/doctor.ico";
                 docs.Add(dd);
             }
-            return JsonConvert.SerializeObject(docs);
+            return (docs);
         }
 
         //--GetSheetsResults in BL

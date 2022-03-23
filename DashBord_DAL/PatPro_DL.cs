@@ -494,7 +494,7 @@ namespace DashBord_DAL
             var SelectString = "insert into TemplatesOrders(Episode_Key,Patient_Id,UserID,def_key,Order_date,Status) " +
                 " values (" + Eps_Key + ",'" + PID + "'," + User_Id + "," + Keys + ",'" + Utilities.FormatDateClr(DateTime.Now) + " " + DateTime.Now.ToShortTimeString() + "',0)";
             dbcon.ExecNonQuery(SelectString);
-            SelectString = "select max(TemplatesOrders.sys_key) as sys_key  from TemplatesOrders  WITH (nolock)  order by sys_key desc";
+            SelectString = "select max(TemplatesOrders.sys_key) as sys_key  from TemplatesOrders  WITH(nolock) where orderkey is null and  cast(order_date as date )=cast(getdate() as date ) and Episode_Key=" + Eps_Key + @" and def_key="+ Keys+@"   order by sys_key desc";
             res = dbcon.ExecScalarQuery(SelectString).ToString();
             SelectString = "update TemplatesOrders set orderkey = " + res + " where sys_key = " + res;
             this.dbcon.ExecNonQuery(SelectString);
